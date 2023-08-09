@@ -1,4 +1,4 @@
-import { Container } from "./styles";
+import { Container, Menu, Brand, OrderContent } from "./styles";
 import logo from "../../assets/logo.svg";
 import { FiMenu } from "react-icons/fi";
 import { PiReceipt } from "react-icons/pi";
@@ -6,19 +6,19 @@ import { PiReceipt } from "react-icons/pi";
 export function Header() {
   return (
     <Container>
-      <div className="menu">
+      <Menu>
         <FiMenu />
-      </div>
-      <div className="logo">
+      </Menu>
+      <Brand>
         <a href="/">
           <img src={logo} alt="Logo azul do food explorer" />
         </a>
         <h1>food explorer</h1>
-      </div>
-      <div className="order">
+      </Brand>
+      <OrderContent>
         <PiReceipt />
         <span>0</span>
-      </div>
+      </OrderContent>
     </Container>
   );
 }

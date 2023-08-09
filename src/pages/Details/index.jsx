@@ -17,37 +17,38 @@ export function Details() {
   return (
     <Container>
       <Header />
+      <main>
+        <div className="detailsCard">
+          <a href="#">
+            {" "}
+            <FiChevronLeft size={32} /> voltar
+          </a>
+          <img src={DishImg} alt="Imagem do prato" />
+          <h1>Salada Ravanello </h1>
 
-      <div className="detailsCard">
-        <a href="#">
-          {" "}
-          <FiChevronLeft size={32} /> voltar
-        </a>
-        <img src={DishImg} alt="Imagem do prato" />
-        <h1>Salada Ravanello </h1>
+          <p>
+            Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
+          </p>
 
-        <p>
-          Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
-        </p>
-
-        <div className="ingredientTags">
-          <Tag title="alface" />
-          <Tag title="cebola" />
-          <Tag title="pão naan" />
-          <Tag title="pepino" />
-          <Tag title="rabanete" />
-          <Tag title="tomate" />
-        </div>
-
-        <div className="bottom">
-          <div className="amount">
-            <FiMinus size={20.4} />
-            <p>01</p>
-            <FiPlus size={20.4} />
+          <div className="ingredientTags">
+            <Tag title="alface" />
+            <Tag title="cebola" />
+            <Tag title="pão naan" />
+            <Tag title="pepino" />
+            <Tag title="rabanete" />
+            <Tag title="tomate" />
           </div>
-          <ButtonRequest title="pedir - R$25,00" />
+
+          <div className="bottom">
+            <div className="amount">
+              <FiMinus size={20.4} />
+              <p>01</p>
+              <FiPlus size={20.4} />
+            </div>
+            <ButtonRequest title="pedir - R$25,00" />
+          </div>
         </div>
-      </div>
+      </main>
 
       <Footer />
     </Container>

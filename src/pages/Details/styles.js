@@ -56,6 +56,7 @@ export const Container = styled.div`
       display: flex;
       align-items: center;
       gap: 1.6rem;
+      margin-right: 2rem;
 
       > p {
         font-family: "Roboto", sans-serif;

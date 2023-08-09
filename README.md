@@ -7,7 +7,8 @@ Projeto de um cardápio digital direcionado para ser usado por restaurantes com 
 Clone o Front-End do meu repositório:
 `xxxxxxxxxxxxxxxxxxxxx`
 <br>
-Clone o Back-End do meu repositório:
+Clone o Back-End do meu repositório:<br>
+
 `xxxxxxxxxxxxxxxxxxxxxxx`
 
 ### 📋 Pré-requisitos
@@ -31,9 +32,10 @@ Acesse a porta `http://localhost:3333`
 
 `Deploy do projeto back-end pelo render: xxxxxxxxxxxxxxxxxxxx`
 <br>
+
 `Deploy do projeto front-end pelo netlify: rocketfoodlorraine.netlify.app`
 
-Para ter acesso ao login de administrador e ter poderes e adicionar, deletar e atualizar pratos, utilize:
+Para ter acesso ao login de administrador e ter poderes de adicionar, atualizar e deletar pratos, utilize:
 `login: admin`
 `password: admin`
 

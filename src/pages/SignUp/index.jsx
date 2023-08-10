@@ -17,7 +17,7 @@ export function SignUp() {
 
         <Form>
           <h1>Crie sua conta</h1>
-          <label htmlFor="userName">Seu Nome</label>
+          <label htmlFor="userName">Seu nome</label>
           <Input
             id="userName"
             type="text"

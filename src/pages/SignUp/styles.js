@@ -45,6 +45,7 @@ export const Brand = styled.div`
   align-items: center;
   gap: 1.07rem;
   margin-top: 16rem;
+  margin-right: 4rem;
 
   img {
     width: 4.3rem;
@@ -89,6 +90,7 @@ export const Form = styled.form`
 
 export const CreateAccount = styled.div`
   margin: 0 auto;
+  margin-top: -1rem;
 
   a {
     font-family: "Poppins";

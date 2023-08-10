@@ -1,54 +1,46 @@
-import { Container } from "./styles";
+import { Container, DetailsCard, IngredientTags, BottomRow } from "./styles";
 import { Header } from "../../components/Header";
-import { Button } from "../../components/Button";
 import { ButtonRequest } from "../../components/ButtonRequest";
 import { Footer } from "../../components/Footer";
 import { Tag } from "../../components/Tags";
-import {
-  FiChevronLeft,
-  FiChevronsRight,
-  FiPlus,
-  FiMinus,
-  FiChevronRight,
-} from "react-icons/fi";
+import { FiChevronLeft, FiChevronRight, FiPlus, FiMinus } from "react-icons/fi";
 import DishImg from "../../assets/ravanello.png";
 
 export function Details() {
   return (
     <Container>
       <Header />
-      <main>
-        <div className="detailsCard">
-          <a href="#">
-            {" "}
-            <FiChevronLeft size={32} /> voltar
-          </a>
-          <img src={DishImg} alt="Imagem do prato" />
-          <h1>Salada Ravanello </h1>
 
-          <p>
-            Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
-          </p>
+      <DetailsCard>
+        <a href="#">
+          {" "}
+          <FiChevronLeft size={32} /> voltar
+        </a>
+        <img src={DishImg} alt="Imagem do prato" />
+        <h1>Salada Ravanello </h1>
 
-          <div className="ingredientTags">
-            <Tag title="alface" />
-            <Tag title="cebola" />
-            <Tag title="pão naan" />
-            <Tag title="pepino" />
-            <Tag title="rabanete" />
-            <Tag title="tomate" />
+        <p>
+          Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
+        </p>
+
+        <IngredientTags>
+          <Tag title="alface" />
+          <Tag title="cebola" />
+          <Tag title="pão naan" />
+          <Tag title="pepino" />
+          <Tag title="rabanete" />
+          <Tag title="tomate" />
+        </IngredientTags>
+
+        <BottomRow>
+          <div className="amount">
+            <FiMinus size={20.4} />
+            <p>01</p>
+            <FiPlus size={20.4} />
           </div>
-
-          <div className="bottom">
-            <div className="amount">
-              <FiMinus size={20.4} />
-              <p>01</p>
-              <FiPlus size={20.4} />
-            </div>
-            <ButtonRequest title="pedir - R$25,00" />
-          </div>
-        </div>
-      </main>
+          <ButtonRequest title="pedir - R$25,00" />
+        </BottomRow>
+      </DetailsCard>
 
       <Footer />
     </Container>

@@ -4,6 +4,7 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.COLORS.HEADERFOOTER};
   grid-area: header;
   width: 100%;
+  min-width: 42.8rem;
 
   height: 6.5rem;
   padding: 2.8rem;

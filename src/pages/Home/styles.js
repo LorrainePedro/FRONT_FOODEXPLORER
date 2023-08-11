@@ -2,22 +2,22 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  min-height: 100vh;
-  min-width: 42rem;
+  height: 100vh;
+  cursor: pointer;
 `;
 
 export const Main = styled.div`
   background: linear-gradient(180deg, #091e26 0%, #00131c 100%);
   position: relative;
-  width: 37.6rem;
+
   height: 12rem;
   margin-top: 4.4rem;
   margin-left: 3rem;
+  margin-bottom: 6.2rem;
 
   display: flex;
   align-items: center;
   border-radius: 0.3rem;
-  // border: 1px solid red;
 
   > img {
     margin-left: -3rem;
@@ -44,82 +44,38 @@ export const Main = styled.div`
     }
   }
 `;
-export const Content = styled.div`
-  width: 21rem;
-  height: 29rem;
-  padding: 2.4rem;
 
-  margin-top: 8rem; ///tirar
-  margin-left: 8rem; ///tirar
+export const Content = styled.div``;
 
-  .favoriteSvg {
-    position: relative;
-    bottom: 8rem;
-    left: 15rem;
-
-    width: 2.4rem;
-    height: 2.2rem;
-  }
-
-  img {
-    margin-left: 1rem;
-    width: 8.8rem;
-  }
-
-  border: 1px solid red;
-  border-radius: 0.8rem;
-
-  .dishTitle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-self: center;
-    gap: 1.2rem;
-
-    h1 {
-      color: ${({ theme }) => theme.COLORS.GRAY};
-      font-size: 1.4rem;
-      font-weight: 500;
-      line-height: 2.4rem;
-    }
-
-    .arrow {
-      position: absolute;
-      margin-top: 0.5rem;
-    }
-
-    span {
-      color: ${({ theme }) => theme.COLORS.BLUE};
-      font-family: "Roboto", sans-serif;
-      //font-size: 1.6rem;
-      line-height: 100%;
-    }
-  }
-`;
-export const BottomRow = styled.div`
+export const Section = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
+  width: 43.6rem;
+  height: 34rem;
+  border: 1px solid red;
+  margin-left: 2.4rem;
+  margin-bottom: 2.4rem;
+  gap: 1.6rem;
 
-  .amount {
-    display: flex;
-    align-items: center;
-    align-self: center;
-    gap: 1.4rem;
-    margin: 1.6rem;
-    > p {
-      font-family: "Roboto", sans-serif;
-      font-size: 1.6rem;
-      line-height: 100%;
-    }
+  h2 {
+    color: RED;
+    font-family: "Poppins", serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 140%;
+    border: 1px solid green;
   }
 
-  button {
-    width: 16.2rem;
-    height: 3.2rem;
-    font-size: 0.9rem;
-    border-radius: 0.4rem;
-
-    font-size: 1.4rem;
-    line-height: 2.4rem;
+  .cards {
+    display: flex;
+    gap: 1.6rem;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      height: 0.1rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+    }
   }
 `;

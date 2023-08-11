@@ -4,7 +4,7 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.COLORS.HEADERFOOTER};
   grid-area: header;
   width: 100%;
-  min-width: 42.8rem;
+  top: 0;
 
   height: 6.5rem;
   padding: 2.8rem;
@@ -41,15 +41,15 @@ export const OrderContent = styled.div`
   }
 
   span {
-    position: fixed;
+    position: relative;
     border-radius: 99%;
     background-color: #92000e;
 
     width: 2rem;
     height: 2rem;
 
-    top: 1.2rem;
-    right: 2.2rem;
+    bottom: 3.5rem;
+    left: 1.5rem;
 
     font-size: 1.4rem;
     line-height: 2.4rem;

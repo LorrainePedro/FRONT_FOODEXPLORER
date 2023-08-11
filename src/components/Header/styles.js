@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.header`
   background-color: ${({ theme }) => theme.COLORS.HEADERFOOTER};
+  grid-area: header;
+
   top: 0;
   position: relative;
   width: 100%;

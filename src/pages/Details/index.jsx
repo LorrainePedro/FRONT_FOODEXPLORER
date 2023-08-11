@@ -42,7 +42,7 @@ export function Details() {
         </BottomRow>
       </DetailsCard>
 
-      <Footer />
+      <Footer className="bottomfix" />
     </Container>
   );
 }

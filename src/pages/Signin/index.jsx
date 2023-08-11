@@ -2,8 +2,7 @@ import { Container, Content, Brand, Form, Register } from "./styles";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import logo from "../../assets/logo.svg";
-
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function SignIn() {
   return (
@@ -35,7 +34,7 @@ export function SignIn() {
           <Button className="loginButton" title="Entrar" />
 
           <Register>
-            <a href="/">Criar uma conta</a>
+            <Link to="/register">Criar uma conta</Link>
           </Register>
         </Form>
       </Content>

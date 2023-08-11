@@ -9,8 +9,10 @@ export const DetailsCard = styled.div`
   margin: 0 auto;
   margin-top: 1.6rem;
   width: 32rem;
-  // height: 67rem;
+  margin-bottom: 3.5rem;
+  //height: 67rem;
   //  border: 1px solid red;
+  // margin-bottom: 13.8rem;
 
   display: flex;
   flex-direction: column;

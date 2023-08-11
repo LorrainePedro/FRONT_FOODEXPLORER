@@ -44,6 +44,7 @@ export const Brand = styled.div`
   align-items: center;
   gap: 1.07rem;
   margin-top: 16rem;
+  margin-right: 4rem;
 
   img {
     width: 4.3rem;

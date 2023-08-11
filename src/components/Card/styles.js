@@ -16,6 +16,11 @@ export const Container = styled.div`
     height: 2.2rem;
   }
 
+  svg:hover path {
+    color: ${({ theme }) => theme.COLORS.RED};
+    transition: 0.8s;
+  }
+
   img {
     margin-left: 1rem;
     width: 8.8rem;
@@ -45,7 +50,6 @@ export const Container = styled.div`
     span {
       color: ${({ theme }) => theme.COLORS.BLUE};
       font-family: "Roboto", sans-serif;
-      //font-size: 1.6rem;
       line-height: 100%;
     }
   }

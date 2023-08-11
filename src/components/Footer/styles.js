@@ -2,11 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.COLORS.HEADERFOOTER};
+  bottom: 0;
+  position: relative;
   width: 100%;
   height: 7.7rem;
-
-  position: relative;
-  bottom: 0;
 
   display: flex;
   align-items: center;

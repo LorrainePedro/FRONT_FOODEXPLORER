@@ -1,4 +1,4 @@
-import { Container, Main, Content, Section } from "./styles";
+import { Container, Main, Section } from "./styles";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { FiSearch } from "react-icons/fi";
@@ -19,34 +19,33 @@ export function Home() {
           <p>Sinta o cuidado do preparo com ingredientes selecionados</p>
         </div>
       </Main>
-      <Content>
-        <Section>
-          <h2>Refeições</h2>
-          <div className="cards">
-            <Card />
-            <Card />
-            <Card />
-          </div>
-        </Section>
 
-        <Section>
-          <h2>Pratos principais</h2>
-          <div className="cards">
-            <Card />
-            <Card />
-            <Card />
-          </div>
-        </Section>
+      <Section>
+        <h2>Refeições</h2>
+        <div className="cards">
+          <Card />
+          <Card />
+          <Card />
+        </div>
+      </Section>
 
-        <Section>
-          <h2>Bebidas</h2>
-          <div className="cards">
-            <Card />
-            <Card />
-            <Card />
-          </div>
-        </Section>
-      </Content>
+      <Section>
+        <h2>Pratos principais</h2>
+        <div className="cards">
+          <Card />
+          <Card />
+          <Card />
+        </div>
+      </Section>
+
+      <Section>
+        <h2>Bebidas</h2>
+        <div className="cards">
+          <Card />
+          <Card />
+          <Card />
+        </div>
+      </Section>
 
       <Footer />
     </Container>

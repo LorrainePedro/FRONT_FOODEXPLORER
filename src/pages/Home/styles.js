@@ -45,26 +45,21 @@ export const Main = styled.div`
   }
 `;
 
-export const Content = styled.div``;
-
 export const Section = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 43.6rem;
   height: 34rem;
-  border: 1px solid red;
   margin-left: 2.4rem;
   margin-bottom: 2.4rem;
   gap: 1.6rem;
 
   h2 {
-    color: RED;
+    color: ${({ theme }) => theme.COLORS.GRAY};
     font-family: "Poppins", serif;
     font-size: 1.8rem;
     font-weight: 500;
     line-height: 140%;
-    border: 1px solid green;
   }
 
   .cards {

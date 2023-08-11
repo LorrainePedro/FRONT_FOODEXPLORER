@@ -2,16 +2,15 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.COLORS.HEADERFOOTER};
-  grid-area: header;
-  width: 100%;
   top: 0;
-
+  position: relative;
+  width: 100%;
   height: 6.5rem;
-  padding: 2.8rem;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 2.8rem;
 `;
 
 export const Menu = styled.div`

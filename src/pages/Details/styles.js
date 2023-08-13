@@ -3,58 +3,114 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
+  //position: fixed;
+
+  display: grid;
+  grid-template-rows: 6.5rem auto 7.7rem;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
 `;
-
-export const DetailsCard = styled.div`
+export const Content = styled.div`
+  //position: relative;
+  // margin-bottom: 3.5rem;
   margin: 0 auto;
-  margin-top: 1.6rem;
+  margin-top: 3.6rem;
   width: 32rem;
-  margin-bottom: 3.5rem;
-  //height: 67rem;
-  //  border: 1px solid red;
-  // margin-bottom: 13.8rem;
+  border: 1px solid red;
 
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
+  @media (min-width: 1024px) {
+    width: 140rem;
+    height: 47rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    //margin-top: 13rem;
+    //  padding: 12rem;
+
+    //justify-content: center;
+    // gap: 4.7rem;
+  }
+`;
+export const Image = styled.div`
+  width: 26rem;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
 
   > a {
     display: flex;
+    align-items: center;
     font-size: 2.4rem;
+    font-family: "Poppins", sans-serif;
     font-weight: 500;
+    margin-bottom: 2rem;
+    margin-left: -2rem;
   }
 
-  img {
-    align-self: center;
-    width: 26rem;
-  }
-
-  h1 {
-    font-weight: 500;
-    font-size: 2.7rem;
-  }
-
-  p {
-    text-align: justify;
-  }
-
-  h1,
-  p {
-    text-align: center;
+  @media (min-width: 1024px) {
+    //  margin-left: 12rem;
+    img {
+      width: 39rem;
+    }
   }
 `;
 
+export const Description = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  > h1 {
+    font-weight: 100;
+    font-size: 2.7rem;
+    line-height: 140%;
+  }
+
+  > p {
+    line-height: 140%;
+  }
+
+  > h1,
+  p {
+    text-align: center;
+    color: ${({ theme }) => theme.COLORS.GRAY};
+  }
+
+  @media (min-width: 1024px) {
+    margin: 0 auto;
+    margin-right: 4rem;
+    margin-top: 12rem;
+
+    > h1 {
+      font-size: 4rem;
+      // font-weight: 100;
+    }
+    p {
+      font-size: 2.4rem;
+    }
+
+    > h1,
+    p {
+      text-align: start;
+    }
+  }
+`;
 export const IngredientTags = styled.div`
   display: flex;
   gap: 2.4rem;
-  align-items: center;
+  padding: 0.6rem;
+  //align-items: center;
   flex-wrap: wrap;
-  margin-left: 0.8rem;
-`;
 
+  /* @media (min-width: 800px) {
+    flex-wrap: nowrap;
+  } */
+`;
 export const BottomRow = styled.div`
   display: flex;
   margin-top: 1.8rem;
+  margin-bottom: 8rem;
 
   .amount {
     display: flex;

@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.footer`
+  grid-area: footer;
+
   background-color: ${({ theme }) => theme.COLORS.HEADERFOOTER};
-  bottom: 0;
-  //position: absolute;
   width: 100%;
   height: 7.7rem;
+  //position: relative;
 
   display: flex;
   align-items: center;

@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const Container = styled.header`
   background-color: ${({ theme }) => theme.COLORS.HEADERFOOTER};
   grid-area: header;
-
-  top: 0;
-  position: relative;
+  /* position: relative; */
+  /* 
+  top: 0; */
   width: 100%;
   height: 6.5rem;
 
@@ -39,6 +39,7 @@ export const Brand = styled.div`
 export const OrderContent = styled.div`
   svg {
     font-size: 2.6rem;
+    margin-top: 2.5rem;
   }
 
   span {

@@ -6,7 +6,10 @@ export const Container = styled.div`
   cursor: pointer;
 `;
 
-export const Main = styled.div``;
+export const Main = styled.div`
+  min-height: 100vh;
+  overflow-y: auto;
+`;
 
 export const MainImg = styled.div`
   background: linear-gradient(180deg, #091e26 0%, #00131c 100%);

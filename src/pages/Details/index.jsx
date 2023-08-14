@@ -9,7 +9,7 @@ import {
 import { Header } from "../../components/Header";
 import { ButtonRequest } from "../../components/ButtonRequest";
 import { Footer } from "../../components/Footer";
-import { Tag } from "../../components/Tags";
+import { Tags } from "../../components/Tags";
 import { FiChevronLeft, FiChevronRight, FiPlus, FiMinus } from "react-icons/fi";
 import DishImg from "../../assets/ravanello.png";
 

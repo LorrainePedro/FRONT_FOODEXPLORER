@@ -3,22 +3,18 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-  //position: fixed;
 
   display: grid;
-  grid-template-rows: 6.5rem auto 7.7rem;
+  grid-template-rows: 11.4rem auto 7.7rem;
   grid-template-areas:
     "header"
     "content"
     "footer";
 `;
 export const Content = styled.div`
-  //position: relative;
-  // margin-bottom: 3.5rem;
   margin: 0 auto;
-  margin-top: 3.6rem;
+  // margin-top: 3.6rem;
   width: 32rem;
-  border: 1px solid red;
 
   @media (min-width: 1024px) {
     width: 140rem;
@@ -26,11 +22,6 @@ export const Content = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    //margin-top: 13rem;
-    //  padding: 12rem;
-
-    //justify-content: center;
-    // gap: 4.7rem;
   }
 `;
 export const Image = styled.div`
@@ -46,6 +37,7 @@ export const Image = styled.div`
     font-weight: 500;
     margin-bottom: 2rem;
     margin-left: -2rem;
+    padding-top: 3.6rem;
   }
 
   @media (min-width: 1024px) {
@@ -100,17 +92,11 @@ export const IngredientTags = styled.div`
   display: flex;
   gap: 2.4rem;
   padding: 0.6rem;
-  //align-items: center;
   flex-wrap: wrap;
-
-  /* @media (min-width: 800px) {
-    flex-wrap: nowrap;
-  } */
 `;
 export const BottomRow = styled.div`
   display: flex;
-  margin-top: 1.8rem;
-  margin-bottom: 8rem;
+  margin-top: 1rem;
 
   .amount {
     display: flex;

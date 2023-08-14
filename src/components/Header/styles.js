@@ -3,16 +3,16 @@ import styled from "styled-components";
 export const Container = styled.header`
   background-color: ${({ theme }) => theme.COLORS.HEADERFOOTER};
   grid-area: header;
-  /* position: relative; */
-  /* 
-  top: 0; */
   width: 100%;
-  height: 6.5rem;
+`;
+
+export const Content = styled.div`
+  height: 11.4rem;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2.8rem;
+  padding: 5.6rem 2.8rem 2.8rem;
 `;
 
 export const Menu = styled.div`

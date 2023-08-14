@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
-export const Container = styled.span`
-  background-color: #192227;
-  width: 8.5rem;
-  height: 3.2rem;
-
+export const Container = styled.div`
+  width: fit-content;
+  background: blue;
+  padding: 0.4rem 0.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 0.5rem;
+  border-radius: 0.8rem;
 
+  color: red;
+  text-align: center;
   font-size: 1.4rem;
-  line-height: 24;
+  font-weight: 500;
 `;

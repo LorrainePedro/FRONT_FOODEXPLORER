@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background: ${({ theme }) => theme.COLORS.TAGS};
+
+  color: ${({ theme }) => theme.COLORS.WHITE};
   width: 8rem;
   height: 3.2rem;
 

@@ -24,30 +24,32 @@ export function NewDish() {
     <Container>
       <Header />
       <Content>
-        <Link to="/">
-          <MdOutlineArrowBackIos />
-          <span>Voltar</span>
-        </Link>
+        <div className="back">
+          <Link to="/">
+            <MdOutlineArrowBackIos size={22} />
+            <h2>Voltar</h2>
+          </Link>
+        </div>
         <h1>Novo prato</h1>
 
         <Form>
           <InputWrapper>
-            <label htmlFor="addImg">
-              Imagem do prato
+            <div className="imgNew">
+              <span>Imagem do prato</span>
               <ImageUpload>
                 <MdOutlineFileUpload size={24} />
                 <h2>Selecione a Imagem</h2>
-
-                <input id="addImg" type="file" className="addFile" />
+                <input type="file" className="addFile" />
               </ImageUpload>
-            </label>
+            </div>
 
-            <label htmlFor="addName">Nome</label>
-            <Input id="addName" type="text" placeholder="Ex: Salada Ceasar" />
-
-            <div className="selectCtg">
-              <label htmlFor="addCategory">Categoria</label>
-              <select className="selectCategory">
+            <div className="nameNew">
+              <span>Nome</span>
+              <Input type="text" placeholder="Ex: Salada Ceasar" />
+            </div>
+            <div className="selectNew">
+              <span>Categoria</span>
+              <select>
                 <option value="refeicoes">Refeição</option>
                 <option value="sobremesas">Sobremesa</option>
                 <option value="bebidas">Bebida</option>
@@ -55,29 +57,31 @@ export function NewDish() {
             </div>
           </InputWrapper>
 
-          <label htmlFor="addTags">Ingredientes</label>
-          <IngredientsTags id="addTags">
-            <NewTag
-              // key={String(index)}
-              // value={ingredient}
-              onClick={() => handleRemoveIngredient(ingredient)}
-            />
+          <div className="ingredientsRow">
+            <IngredientsTags>
+              <span>Ingredientes</span>
+              <div className="addTags">
+                <NewTag
+                  // key={String(index)}
+                  // value={ingredient}
+                  onClick={() => handleRemoveIngredient(ingredient)}
+                />
 
-            <NewTag isNew placeholder="Adicionar" />
-          </IngredientsTags>
-
-          <label htmlFor="addPrice" className="labels">
-            Preço
-          </label>
-          <Input type="text" placeholder="R$ 00,00" />
+                <NewTag isNew placeholder="Adicionar" />
+              </div>
+            </IngredientsTags>
+            <div className="price">
+              <span>Preço</span>
+              <Input id="inputPrice" type="number" placeholder="R$ 00,00" />
+            </div>
+          </div>
 
           <Description>
-            <label htmlFor="addDescription">Descrição</label>
-            <Textarea
-              id="addDescription"
-              placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
-            />
-            <Button className="saveButton" title="Salvar alterações" />
+            <span>Descrição</span>
+            <Textarea placeholder="Fale brevemente sobre o prato, seus ingredientes e composição" />
+            <div className="saveButton">
+              <Button title="Salvar alterações" />
+            </div>
           </Description>
         </Form>
       </Content>

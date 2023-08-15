@@ -11,10 +11,12 @@ export default {
     LOGIN: "#001119",
     BORDER: "#000204",
 
-    LABELS: "#C4C4CC",
-    INPUT: "#0D1D25",
+    INPUT: " #0d161b",
     INPUTCONTENT: "#7C7C8A",
-    TAGS: "#192227",
+    INPUTSELECT: "#0D1D25",
+    LABELS: "#C4C4CC",
+    TAGS: "#76797B",
+    TOMATOBUTTON: "#AB4D55",
 
     INGREDIENTS: "rgba(255, 255, 255, 0.1)",
     BACKGROUNDCARD: "rgba(0, 0, 0, 0.32)",

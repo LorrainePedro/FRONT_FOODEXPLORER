@@ -14,6 +14,7 @@ export default {
     LABELS: "#C4C4CC",
     INPUT: "#0D1D25",
     INPUTCONTENT: "#7C7C8A",
+    TAGS: "#192227",
 
     INGREDIENTS: "rgba(255, 255, 255, 0.1)",
     BACKGROUNDCARD: "rgba(0, 0, 0, 0.32)",

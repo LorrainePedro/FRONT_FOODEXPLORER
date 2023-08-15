@@ -10,15 +10,18 @@ export const Container = styled.div`
     "header"
     "content"
     "footer";
+
+  label {
+    color: ${({ theme }) => theme.COLORS.GRAY};
+    //font-family: "Roboto";
+    font-size: 1.6rem;
+  }
 `;
 
 export const Content = styled.div`
   padding: 3.2rem;
   margin: 0 auto;
-
-  input {
-    border: 1px solid green;
-  }
+  height: 100vh;
 
   > a {
     color: ${({ theme }) => theme.COLORS.GRAY};
@@ -70,15 +73,19 @@ export const Form = styled.div`
 `;
 
 export const InputWrapper = styled.div`
-  label {
+  .selectCtg {
+    display: flex;
+    flex-direction: column;
+  }
+  /* label {
     color: ${({ theme }) => theme.COLORS.LABELS};
     font-size: 1.6rem;
-  }
+  } */
 
-  .labels {
+  /* .labels {
     margin-top: 1rem;
     margin-bottom: 1rem;
-  }
+  } */
 `;
 
 export const ImageUpload = styled.div`
@@ -87,6 +94,7 @@ export const ImageUpload = styled.div`
   display: flex;
   align-items: center;
   padding-left: 2rem;
+  border-radius: 0.5rem;
 
   .addFile {
     display: none;
@@ -102,7 +110,7 @@ export const ImageUpload = styled.div`
   }
 `;
 
-export const AddIngredients = styled.div`
+export const IngredientsTags = styled.div`
   border: 1px solid red;
   display: flex;
   align-items: center;
@@ -111,3 +119,5 @@ export const AddIngredients = styled.div`
   height: 4.8rem;
   border-radius: 0.5rem;
 `;
+
+export const Description = styled.div``;

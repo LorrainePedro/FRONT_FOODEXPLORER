@@ -89,10 +89,18 @@ export const Description = styled.div`
   }
 `;
 export const IngredientTags = styled.div`
-  display: flex;
-  gap: 2.4rem;
-  padding: 0.6rem;
-  flex-wrap: wrap;
+  display: grid;
+  justify-items: center;
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 2.4rem;
+
+  @media (min-width: 1024px) {
+    display: flex;
+    gap: 2.4rem;
+  }
 `;
 export const BottomRow = styled.div`
   display: flex;

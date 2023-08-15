@@ -4,7 +4,8 @@ import {
   Form,
   InputWrapper,
   ImageUpload,
-  AddIngredients,
+  IngredientsTags,
+  Description,
 } from "./styles";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -14,6 +15,7 @@ import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { Textarea } from "../../components/Textarea";
 import { Tags } from "../../components/Tags";
+import { NewTag } from "../../components/NewTag";
 
 import { MdOutlineArrowBackIos, MdOutlineFileUpload } from "react-icons/md";
 
@@ -29,56 +31,54 @@ export function NewDish() {
         <h1>Novo prato</h1>
 
         <Form>
-          <InputWrapper className="firstSection">
-            <label htmlFor="addImg" className="labels">
+          <InputWrapper>
+            <label htmlFor="addImg">
               Imagem do prato
-            </label>
-            <ImageUpload>
-              <MdOutlineFileUpload size={24} />
-              <h2>Selecione a Imagem</h2>
+              <ImageUpload>
+                <MdOutlineFileUpload size={24} />
+                <h2>Selecione a Imagem</h2>
 
-              <input id="addImg" type="file" className="addFile" />
-            </ImageUpload>
-
-            <label htmlFor="addName" className="labels">
-              Nome
+                <input id="addImg" type="file" className="addFile" />
+              </ImageUpload>
             </label>
+
+            <label htmlFor="addName">Nome</label>
             <Input id="addName" type="text" placeholder="Ex: Salada Ceasar" />
 
-            <label htmlFor="addCategory" className="labels">
-              Categoria
-            </label>
-            <select className="selectCategory">
-              <option value="refeicoes">Refeição</option>
-              <option value="sobremesas">Sobremesa</option>
-              <option value="bebidas">Bebida</option>
-            </select>
+            <div className="selectCtg">
+              <label htmlFor="addCategory">Categoria</label>
+              <select className="selectCategory">
+                <option value="refeicoes">Refeição</option>
+                <option value="sobremesas">Sobremesa</option>
+                <option value="bebidas">Bebida</option>
+              </select>
+            </div>
           </InputWrapper>
 
-          <InputWrapper className="secondSection">
-            <label htmlFor="addTags" className="labels">
-              Ingredientes
-            </label>
-            <AddIngredients id="addTags">
-              <Tags placeholder="Adicionar" />
-            </AddIngredients>
+          <label htmlFor="addTags">Ingredientes</label>
+          <IngredientsTags id="addTags">
+            <NewTag
+              // key={String(index)}
+              // value={ingredient}
+              onClick={() => handleRemoveIngredient(ingredient)}
+            />
 
-            <label htmlFor="addPrice" className="labels">
-              Preço
-            </label>
-            <Input type="text" placeholder="R$ 00,00" />
-          </InputWrapper>
+            <NewTag isNew placeholder="Adicionar" />
+          </IngredientsTags>
 
-          <InputWrapper className="thirdSection">
-            <label htmlFor="addDescription" className="labels">
-              Descrição
-            </label>
+          <label htmlFor="addPrice" className="labels">
+            Preço
+          </label>
+          <Input type="text" placeholder="R$ 00,00" />
+
+          <Description>
+            <label htmlFor="addDescription">Descrição</label>
             <Textarea
               id="addDescription"
               placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
             />
             <Button className="saveButton" title="Salvar alterações" />
-          </InputWrapper>
+          </Description>
         </Form>
       </Content>
       <Footer />

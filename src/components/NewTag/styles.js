@@ -2,54 +2,41 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
+  gap: 0.8rem;
   align-items: center;
+  height: 3.2rem;
 
-  max-width: 13rem;
-  min-width: 8rem;
+  padding: 1rem 1.6rem;
 
-  background-color: ${({ theme, $isNew }) =>
-    $isNew ? "none" : theme.COLORS.BLUE};
+  background-color: ${({ theme, isNew }) =>
+    isNew ? "transparent" : theme.COLORS.INGREDIENTS};
+  color: ${({ theme }) => theme.COLORS.WHITE};
 
-  color: ${({ theme, $isNew }) =>
-    $isNew ? theme.COLORS.RED : theme.COLORS.YELLOW};
+  border: ${({ theme, isNew }) =>
+    isNew ? `1px dashed ${theme.COLORS.INPUTCONTENT}` : "none"};
 
-  border: ${({ theme, $isNew }) =>
-    $isNew ? `1px dashed ${theme.COLORS.GREEN}` : "none"};
   border-radius: 0.8rem;
 
-  padding: 0.5rem 1.6rem;
-
-  button {
-    background: none;
+  > button {
     border: none;
-
-    width: 2rem;
-    height: 2rem;
-
+    background: none;
     display: flex;
     align-items: center;
+
+    color: ${({ theme, isNew }) =>
+      isNew ? theme.COLORS.INPUTCONTENT : theme.COLORS.WHITE};
   }
 
-  .deleteButton {
-    color: ${({ theme }) => theme.COLORS.BLUE};
-  }
-
-  .addButton {
-    color: ${({ theme }) => theme.COLORS.RED};
-  }
-
-  input {
+  > input {
+    color: ${({ theme }) => theme.COLORS.WHITE};
     height: 3.2rem;
-    width: 100%;
+    width: 9rem;
 
-    background: none;
+    background: transparent;
     border: none;
 
-    color: ${({ theme }) => theme.COLORS.BLUE};
-    font-family: "Roboto", serif;
-
     &::placeholder {
-      color: ${({ theme }) => theme.COLORS.GRAY};
+      color: ${({ theme }) => theme.COLORS.INPUTCONTENT};
     }
   }
 `;

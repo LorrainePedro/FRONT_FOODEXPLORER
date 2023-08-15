@@ -34,12 +34,12 @@ export function Details() {
           </p>
 
           <IngredientTags>
-            <Tag title="alface" />
-            <Tag title="cebola" />
-            <Tag title="pão naan" />
-            <Tag title="pepino" />
-            <Tag title="rabanete" />
-            <Tag title="tomate" />
+            <Tags title="alface" />
+            <Tags title="cebola" />
+            <Tags title="pão naan" />
+            <Tags title="pepino" />
+            <Tags title="rabanete" />
+            <Tags title="tomate" />
           </IngredientTags>
 
           <BottomRow>

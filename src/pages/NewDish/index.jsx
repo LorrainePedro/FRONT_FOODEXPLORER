@@ -79,7 +79,7 @@ export function NewDish() {
           <Description>
             <span>Descrição</span>
             <Textarea placeholder="Fale brevemente sobre o prato, seus ingredientes e composição" />
-            <div className="saveButton">
+            <div className="buttonRow">
               <Button title="Salvar alterações" />
             </div>
           </Description>

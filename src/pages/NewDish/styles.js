@@ -180,7 +180,7 @@ export const Description = styled.div`
     height: 17rem;
   }
 
-  .saveButton {
+  .buttonRow {
     Button {
       background: ${({ theme }) => theme.COLORS.TOMATOBUTTON};
       font-family: "Poppins", serif;

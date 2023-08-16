@@ -34,7 +34,7 @@ export function SignIn() {
           <Button className="loginButton" title="Entrar" />
 
           <Register>
-            <Link to="/register">Criar uma conta</Link>
+            <Link to="/users">Criar uma conta</Link>
           </Register>
         </Form>
       </Content>

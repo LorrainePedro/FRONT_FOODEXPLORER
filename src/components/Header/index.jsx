@@ -2,8 +2,18 @@ import { Container, Content, Menu, Brand, OrderContent } from "./styles";
 import logo from "../../assets/logo.svg";
 import { FiMenu } from "react-icons/fi";
 import { PiReceipt } from "react-icons/pi";
+import { Link } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
 
 export function Header() {
+  const navigate = useNavigate();
+
+  function handleSignOut() {
+    navigate("/");
+    signOut();
+  }
+
   return (
     <Container>
       <Content>

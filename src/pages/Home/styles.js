@@ -2,13 +2,34 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100vh;
-  cursor: pointer;
+  display: grid;
+
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+
+  grid-template-rows: 11.4rem auto 7.7rem;
+
+  .sections {
+    @media (min-width: 800px) {
+      border: 1px solid red;
+      width: 112rem;
+      margin: 0 auto;
+
+      margin-top: 6.2rem;
+    }
+  }
 `;
 
 export const Main = styled.div`
-  min-height: 100vh;
   overflow-y: auto;
+
+  /* .sections {
+    @media (min-width: 800px) {
+      margin: 0 auto;
+    }
+  } */
 `;
 
 export const MainImg = styled.div`
@@ -16,6 +37,7 @@ export const MainImg = styled.div`
   position: relative;
 
   height: 12rem;
+  width: 37.6rem;
   margin-top: 4.4rem;
   margin-left: 3rem;
   margin-bottom: 6.2rem;
@@ -48,13 +70,36 @@ export const MainImg = styled.div`
       font-size: 1.2rem;
     }
   }
+
+  @media (min-width: 800px) {
+    width: 112rem;
+    height: 26rem;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 18rem;
+
+    > .title h1 {
+      font-weight: 300;
+      font-size: 4rem;
+    }
+
+    > .title p {
+      font-size: 1.6rem;
+    }
+
+    > .mainImg {
+      width: 55rem;
+      height: 40rem;
+      margin-top: -14.7rem;
+      margin-left: -4rem;
+      margin-bottom: -1rem;
+    }
+  }
 `;
 
 export const Section = styled.div`
   display: flex;
   flex-direction: column;
-  position: relative;
-  height: 34rem;
   margin-left: 2.4rem;
   margin-bottom: 2.4rem;
   gap: 1.6rem;
@@ -76,6 +121,19 @@ export const Section = styled.div`
     }
     &::-webkit-scrollbar-thumb {
       background-color: transparent;
+    }
+  }
+
+  @media (min-width: 800px) {
+    h2 {
+      margin-left: -2.5rem;
+      font-size: 3.2rem;
+      font-weight: 300;
+      line-height: 140%;
+    }
+
+    .cards {
+      margin-left: -2.4rem;
     }
   }
 `;

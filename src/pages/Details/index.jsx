@@ -7,7 +7,7 @@ import {
   Image,
 } from "./styles";
 import { Header } from "../../components/Header";
-import { ButtonRequest } from "../../components/ButtonRequest";
+import { Button } from "../../components/Button";
 import { Footer } from "../../components/Footer";
 import { Tags } from "../../components/Tags";
 import { FiChevronLeft, FiChevronRight, FiPlus, FiMinus } from "react-icons/fi";
@@ -48,7 +48,7 @@ export function Details() {
               <p>01</p>
               <FiPlus size={20.4} />
             </div>
-            <ButtonRequest title="pedir - R$25,00" />
+            <Button title="pedir - R$25,00" />
           </BottomRow>
         </Description>
       </Content>

@@ -14,6 +14,11 @@ export const Container = styled.div`
 
     width: 2.4rem;
     height: 2.2rem;
+
+    @media (min-width: 800px) {
+      bottom: 16rem;
+      left: 23rem;
+    }
   }
 
   svg:hover path {
@@ -35,11 +40,20 @@ export const Container = styled.div`
     align-self: center;
     gap: 1.2rem;
 
-    h1 {
+    h1,
+    p {
       color: ${({ theme }) => theme.COLORS.GRAY};
+    }
+
+    h1 {
       font-size: 1.4rem;
       font-weight: 500;
       line-height: 2.4rem;
+    }
+
+    p {
+      display: none;
+      text-align: center;
     }
 
     .arrow {
@@ -52,32 +66,84 @@ export const Container = styled.div`
       font-family: "Roboto", sans-serif;
       line-height: 100%;
     }
-  }
-`;
-export const BottomRow = styled.div`
-  display: flex;
-  flex-direction: column;
 
-  .amount {
-    display: flex;
-    align-items: center;
-    align-self: center;
-    gap: 1.4rem;
-    margin: 1.6rem;
-    > p {
-      font-family: "Roboto", sans-serif;
-      font-size: 1.6rem;
-      line-height: 100%;
+    @media (min-width: 800px) {
+      h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: 2.4rem;
+        line-height: 140%;
+        font-weight: bold;
+      }
+
+      p {
+        display: block;
+      }
+
+      span {
+        font-family: "Roboto", sans-serif;
+        font-size: 3.2rem;
+        line-height: 160%;
+        margin-bottom: 1.5rem;
+      }
     }
   }
 
-  button {
-    width: 16.2rem;
-    height: 3.2rem;
-    font-size: 0.9rem;
-    border-radius: 0.4rem;
+  .bottomRow {
+    display: flex;
+    flex-direction: column;
 
-    font-size: 1.4rem;
-    line-height: 2.4rem;
+    .amount {
+      display: flex;
+      align-items: center;
+      align-self: center;
+      gap: 1.4rem;
+      margin: 1.6rem;
+      > p {
+        font-family: "Roboto", sans-serif;
+        font-size: 1.6rem;
+        line-height: 100%;
+      }
+    }
+
+    button {
+      width: 16.2rem;
+      height: 3.2rem;
+      font-size: 0.9rem;
+      border-radius: 0.4rem;
+
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+    }
+
+    @media (min-width: 800px) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 20rem;
+
+      button {
+        height: 4.8rem;
+        width: 9.2rem;
+      }
+
+      p {
+        font-size: 2rem;
+        line-height: 160%;
+        font-weight: bold;
+      }
+
+      .amount {
+        margin-left: 3rem;
+      }
+    }
+  }
+
+  @media (min-width: 800px) {
+    width: 30.4rem;
+    height: 46.2rem;
+
+    img {
+      width: 17.6rem;
+    }
   }
 `;

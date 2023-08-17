@@ -1,4 +1,4 @@
-import { Container, BottomRow } from "./styles";
+import { Container } from "./styles";
 
 import { Button } from "../../components/Button";
 
@@ -17,18 +17,19 @@ export function Card() {
             Prugna Pie
             <FiChevronRight className="arrow" />
           </h1>
+          <p>Massa fresca com camarões e pesto.</p>
           <span>R$ 25,00</span>
         </div>
 
-        <BottomRow>
+        <div className="bottomRow">
           <div className="amount">
             <FiMinus size={20.4} />
             <p>01</p>
             <FiPlus size={20.4} />
           </div>
 
-          <Button title="Incluir" />
-        </BottomRow>
+          <Button className="Btn" title="Incluir" />
+        </div>
       </div>
     </Container>
   );

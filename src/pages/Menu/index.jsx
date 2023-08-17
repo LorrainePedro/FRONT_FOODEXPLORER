@@ -2,6 +2,7 @@ import { Container, Content } from "./styles";
 import { Link, useNavigate } from "react-router-dom";
 import { Input } from "../../components/Input";
 import { Footer } from "../../components/Footer";
+import { FiSearch } from "react-icons/fi";
 
 import { PiX } from "react-icons/pi";
 
@@ -17,7 +18,10 @@ export function Menu() {
         </div>
 
         <div className="options">
-          <Input placeholder="Busque por pratos ou ingredientes" />
+          <Input
+            placeholder="Busque por pratos ou ingredientes"
+            icon={FiSearch}
+          />
           <ul>
             <li></li>
 

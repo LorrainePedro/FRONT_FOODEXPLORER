@@ -13,7 +13,6 @@ export const Container = styled.div`
 
   .sections {
     @media (min-width: 800px) {
-      border: 1px solid red;
       width: 112rem;
       margin: 0 auto;
 
@@ -24,12 +23,6 @@ export const Container = styled.div`
 
 export const Main = styled.div`
   overflow-y: auto;
-
-  /* .sections {
-    @media (min-width: 800px) {
-      margin: 0 auto;
-    }
-  } */
 `;
 
 export const MainImg = styled.div`

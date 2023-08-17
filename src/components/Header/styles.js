@@ -66,6 +66,8 @@ export const Content = styled.div`
 `;
 
 export const Logo = styled.div`
+  margin-right: 2rem;
+
   @media (min-width: 800px) {
     display: flex;
     gap: 3.2rem;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background: ${({ theme }) => theme.COLORS.TAGS};
+  background: ${({ theme }) => theme.COLORS.INGREDIENTS};
 
   color: ${({ theme }) => theme.COLORS.WHITE};
   width: 8rem;

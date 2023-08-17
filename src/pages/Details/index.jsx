@@ -48,7 +48,7 @@ export function Details() {
               <p>01</p>
               <FiPlus size={20.4} />
             </div>
-            <Button title="pedir - R$25,00" />
+            <Button title="Incluir - R$25,00" />
           </BottomRow>
         </Description>
       </Content>

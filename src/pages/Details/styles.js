@@ -126,5 +126,15 @@ export const BottomRow = styled.div`
     font-size: 0.9rem;
     border-radius: 0.4rem;
     margin-left: 1rem;
+
+    @media (min-width: 800px) {
+      width: 16.2rem;
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+      font-weight: 100;
+      padding: 2rem 2.4rem;
+
+      background-color: #750310;
+    }
   }
 `;

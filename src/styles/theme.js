@@ -16,6 +16,7 @@ export default {
     INPUTSELECT: "#0D1D25",
     LABELS: "#C4C4CC",
     TAGS: "#76797B",
+    INGREDIENTS: "#192227",
     TOMATOBUTTON: "#AB4D55",
 
     INGREDIENTS: "rgba(255, 255, 255, 0.1)",

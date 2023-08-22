@@ -4,13 +4,30 @@ import { Button } from "../../components/Button";
 
 import { FiPlus, FiMinus, FiChevronRight } from "react-icons/fi";
 import DishImg from "../../assets/ravanello.png";
-import { BiHeart } from "react-icons/bi";
+import { BiHeart, BiSolidPencil } from "react-icons/bi";
+import { useAuth } from "../../hooks/auth";
+import { Link } from "react-router-dom";
 
 export function Card() {
+  const { user } = useAuth();
+  const isAdmin = user.isAdmin === 1;
+
   return (
     <Container>
       <div className="Card">
-        <BiHeart className="favoriteSvg" />
+        {user.isAdmin === 1 ? (
+          <>
+            <Link to="/edit/1">
+              {" "}
+              <BiSolidPencil className="pencilSvg" />
+            </Link>
+          </>
+        ) : (
+          <>
+            <BiHeart className="favoriteSvg" />
+          </>
+        )}
+
         <img src={DishImg} />
         <div className="dishTitle">
           <h1>

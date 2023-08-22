@@ -93,6 +93,7 @@ export const MainImg = styled.div`
 export const Section = styled.div`
   display: flex;
   flex-direction: column;
+  width: 41.2rem;
   margin-left: 2.4rem;
   margin-bottom: 2.4rem;
   gap: 1.6rem;
@@ -101,7 +102,7 @@ export const Section = styled.div`
     color: ${({ theme }) => theme.COLORS.GRAY};
     font-family: "Poppins", serif;
     font-size: 1.8rem;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 140%;
   }
 
@@ -118,6 +119,8 @@ export const Section = styled.div`
   }
 
   @media (min-width: 800px) {
+    width: 112.2rem;
+
     h2 {
       margin-left: -2.5rem;
       font-size: 3.2rem;

@@ -3,13 +3,14 @@ import styled from "styled-components";
 export const Container = styled.header`
   background-color: ${({ theme }) => theme.COLORS.HEADERFOOTER};
   grid-area: header;
-
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  align-content: center;
+  align-self: center;
+  justify-content: center;
 
-  gap: 3.2rem;
+  gap: 8.1rem;
   padding: 5.6rem 2.8rem 2.4rem;
 
   .menu {
@@ -18,19 +19,14 @@ export const Container = styled.header`
     }
   }
 
-  .searchInput {
+  .searchInput,
+  .newDish {
     display: none;
-  }
-
-  .deskOrder {
-    width: 10rem;
-    background-color: transparent;
-    text-indent: -9999px;
-    margin-left: -6rem;
   }
 
   @media (min-width: 800px) {
     justify-content: center;
+    gap: 3.2rem;
 
     .menu {
       display: none;
@@ -45,38 +41,47 @@ export const Container = styled.header`
       }
     }
 
-    .deskOrder {
-      background-color: ${({ theme }) => theme.COLORS.RED};
+    .newDish {
+      display: block;
       width: 21.4rem;
-      height: 4.8rem;
       font-size: 1.4rem;
-      text-indent: 0.5rem;
-      margin-left: 2rem;
     }
   }
 `;
 export const Logo = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 19.7rem;
-  gap: 1rem;
+  .logoAndName {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 
-  img {
-    width: 2.3rem;
+    img {
+      width: 2.3rem;
+    }
+
+    h1 {
+      width: 13rem;
+      font-family: "Roboto";
+      font-size: 2.1rem;
+    }
   }
-
-  h1 {
-    font-family: "Roboto";
-    font-size: 2.1rem;
+  span {
+    color: ${({ theme }) => theme.COLORS.BLUE};
+    margin-left: -1rem;
+    padding-left: 0.4rem;
+    font-size: 1.2rem;
+    line-height: 160%;
   }
 
   @media (min-width: 800px) {
-    display: flex;
-    position: relative;
-
-    h1 {
-      font-size: 2.4rem;
+    .logoAndName {
+      h1 {
+        width: 15rem;
+        font-size: 2.4rem;
+      }
+      span {
+        margin-top: 4.2rem;
+        margin-left: -5.7rem;
+      }
     }
   }
 `;

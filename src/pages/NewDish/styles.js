@@ -123,10 +123,6 @@ export const InputWrapper = styled.div`
     .selectNew {
       width: 36.5rem;
     }
-
-    .addFile {
-      width: 21rem;
-    }
   }
 `;
 
@@ -139,9 +135,16 @@ export const ImageUpload = styled.div`
   background: ${({ theme }) => theme.COLORS.INPUT};
 
   .addFile {
+    height: 4.8rem;
     position: absolute;
-    width: 34rem;
+    width: 36rem;
+    margin-left: -2rem;
     opacity: 0;
+
+    @media (min-width: 1024px) {
+      width: 22.5rem;
+      margin-left: -2rem;
+    }
   }
 
   h2 {

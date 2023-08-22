@@ -7,7 +7,8 @@ export const Container = styled.div`
   height: 29rem;
   padding: 2.4rem;
 
-  .favoriteSvg {
+  .favoriteSvg,
+  .pencilSvg {
     position: relative;
     bottom: 8rem;
     left: 15rem;

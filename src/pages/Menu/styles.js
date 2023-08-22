@@ -18,12 +18,6 @@ export const Content = styled.div`
     gap: 1.6rem;
 
     padding: 5.6rem 2.8rem 2.4rem;
-
-    p {
-      font-family: "Roboto", serif;
-      font-size: 2.1rem;
-      font-weight: 400;
-    }
   }
 
   .options {
@@ -45,11 +39,19 @@ export const Content = styled.div`
     padding: 1rem;
   }
 
-  .back {
+  .back,
+  p {
     font-family: "Poppins", sans-serif;
     font-size: 2.4rem;
+    font-weight: 300;
     line-height: 140%;
-
     border-bottom: 1px solid ${({ theme }) => theme.COLORS.INPUT};
+  }
+
+  button {
+    color: red;
+  }
+
+  li {
   }
 `;

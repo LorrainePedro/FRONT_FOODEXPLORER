@@ -10,15 +10,22 @@ export const Container = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2.9rem 2.7rem;
+  padding-left: 2.8rem;
+  padding-right: 2.8rem;
 
-  > span {
+  span {
     font-family: "DM Sans", sans-serif;
     color: #fffaf1;
     font-size: 1.2rem;
     font-weight: 500;
+  }
 
-    @media (min-width: 800px) {
+  @media (min-width: 800px) {
+    position: fixed;
+    bottom: 0;
+    padding: 2.4rem 12rem;
+
+    span {
       font-family: "Roboto", sans-serif;
       font-size: 1.4rem;
     }

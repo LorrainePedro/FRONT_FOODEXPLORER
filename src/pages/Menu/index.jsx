@@ -1,12 +1,24 @@
 import { Container, Content } from "./styles";
-import { Link, useNavigate } from "react-router-dom";
 import { Input } from "../../components/Input";
 import { Footer } from "../../components/Footer";
+import { ButtonText } from "../../components/ButtonText";
 import { FiSearch } from "react-icons/fi";
-
 import { PiX } from "react-icons/pi";
 
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/auth";
+
 export function Menu() {
+  const { signOut, user } = useAuth();
+  const navigate = useNavigate();
+
+  const isAdmin = user.isAdmin === 1;
+
+  function handleSignOut() {
+    navigate("/");
+    signOut();
+  }
+
   return (
     <Container>
       <Content>
@@ -23,10 +35,18 @@ export function Menu() {
             icon={FiSearch}
           />
           <ul>
-            <li></li>
+            <li>
+              {isAdmin ? (
+                <Link to="/new">
+                  <p>Novo prato</p>
+                </Link>
+              ) : (
+                ""
+              )}
+            </li>
 
             <li className="back">
-              <a href="/">Sair</a>
+              <ButtonText onClick={handleSignOut} title="Sair" />
             </li>
           </ul>
         </div>

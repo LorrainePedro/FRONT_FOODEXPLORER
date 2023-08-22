@@ -5,12 +5,11 @@ import { Input } from "../../components/Input";
 import { Button } from "../Button";
 
 import { FiMenu, FiLogOut, FiSearch } from "react-icons/fi";
-import { PiReceipt } from "react-icons/pi";
 
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
 
-export function Header({ handleSearch }) {
+export function HeaderAdm({ handleSearch }) {
   const { signOut } = useAuth();
   const navigate = useNavigate();
 
@@ -18,6 +17,7 @@ export function Header({ handleSearch }) {
     navigate("/");
     signOut();
   }
+
   return (
     <Container>
       <div className="menu">
@@ -27,9 +27,12 @@ export function Header({ handleSearch }) {
       </div>
 
       <Logo>
-        <img src={logo} alt="Logo azul do food explorer" />
+        <div className="logoAndName">
+          <img src={logo} alt="Logo azul do food explorer" />
 
-        <h1>food explorer</h1>
+          <h1>food explorer</h1>
+          <span>admin</span>
+        </div>
       </Logo>
 
       <div className="searchInput">
@@ -39,9 +42,9 @@ export function Header({ handleSearch }) {
           onChange={handleSearch}
         />
       </div>
-
-      <Button className="deskOrder" title="Pedidos(0)" icon={PiReceipt} />
-
+      <Link to="/new">
+        <Button className="newDish" title="Novo prato" />
+      </Link>
       <Logout onClick={handleSignOut}>
         <FiLogOut size={32} />
       </Logout>

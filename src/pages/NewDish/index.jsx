@@ -30,14 +30,8 @@ export function NewDish() {
   const [newIngredient, setNewIngredient] = useState("");
 
   function handleAddIngredient() {
-    if (newIngredient.length < 3) {
-      return alert(
-        "Erro: Você está tentando inserir um nome de ingrediente inválido!"
-      );
-    } else {
-      setIngredients((prevState) => [...prevState, newIngredient]);
-      setNewIngredient("");
-    }
+    setIngredients((prevState) => [...prevState, newIngredient]);
+    setNewIngredient("");
   }
 
   function handleRemoveIngredient(deleted) {

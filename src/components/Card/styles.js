@@ -6,6 +6,11 @@ export const Container = styled.div`
   width: 21rem;
   height: 29rem;
   padding: 2.4rem;
+  margin-bottom: 1rem;
+
+  @media (min-width: 800px) {
+    margin-bottom: 3rem;
+  }
 
   .favoriteSvg,
   .pencilSvg {
@@ -140,7 +145,7 @@ export const Container = styled.div`
   }
 
   @media (min-width: 800px) {
-    width: 30.4rem;
+    min-width: 30.4rem;
     height: 46.2rem;
 
     img {

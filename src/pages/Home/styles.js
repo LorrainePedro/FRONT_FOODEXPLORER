@@ -12,11 +12,29 @@ export const Container = styled.div`
   grid-template-rows: 11.4rem auto 7.7rem;
 
   .sections {
+    h2 {
+      color: ${({ theme }) => theme.COLORS.GRAY};
+      font-family: "Poppins", serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      line-height: 140%;
+
+      margin-left: 2.5rem;
+      margin-bottom: 1.6rem;
+    }
+
     @media (min-width: 800px) {
       width: 112rem;
       margin: 0 auto;
 
       margin-top: 6.2rem;
+
+      > h2 {
+        margin-left: 0.1rem;
+        font-size: 3.2rem;
+        font-weight: 300;
+        line-height: 140%;
+      }
     }
   }
 `;
@@ -92,19 +110,11 @@ export const MainImg = styled.div`
 
 export const Section = styled.div`
   display: flex;
-  flex-direction: column;
+  //flex-direction: column;
   width: 41.2rem;
   margin-left: 2.4rem;
   margin-bottom: 2.4rem;
   gap: 1.6rem;
-
-  h2 {
-    color: ${({ theme }) => theme.COLORS.GRAY};
-    font-family: "Poppins", serif;
-    font-size: 1.8rem;
-    font-weight: 300;
-    line-height: 140%;
-  }
 
   .cards {
     display: flex;
@@ -117,15 +127,39 @@ export const Section = styled.div`
       background-color: transparent;
     }
   }
+  .scrollLeft,
+  .scrollRight {
+    display: none;
+  }
 
   @media (min-width: 800px) {
-    width: 112.2rem;
+    width: 112rem;
 
-    h2 {
-      margin-left: -2.5rem;
-      font-size: 3.2rem;
-      font-weight: 300;
-      line-height: 140%;
+    .scrollLeft,
+    .scrollRight {
+      display: block;
+      position: absolute;
+      border: none;
+      background: linear-gradient(90deg, rgba(0, 10, 10, 0.1) 0%, #000a0f 100%);
+      font-size: 5rem;
+      font-weight: 100;
+      color: white;
+      cursor: pointer;
+      height: 46rem;
+      width: 5rem;
+      transition: box-shadow 0.3s ease;
+    }
+    .scrollLeft:hover,
+    .scrollRight:hover {
+      box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .scrollLeft {
+      margin-left: -2.4rem;
+    }
+
+    .scrollRight {
+      margin-left: 107rem;
     }
 
     .cards {

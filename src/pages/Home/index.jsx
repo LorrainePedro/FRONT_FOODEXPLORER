@@ -4,6 +4,7 @@ import { Footer } from "../../components/Footer";
 import { Card } from "../../components/Card";
 import { Header } from "../../components/Header";
 import { HeaderAdm } from "../../components/HeaderAdm";
+import { DishList } from "../../components/DishList";
 
 import { api } from "../../services/api";
 import { Link, useNavigate } from "react-router-dom";
@@ -41,6 +42,10 @@ export function Home() {
     setSearch(e.target.value);
   }
 
+  async function handleIndex() {
+    console.alert("get.dishes");
+  }
+
   useEffect(() => {
     async function fetchDishes() {
       try {
@@ -58,6 +63,7 @@ export function Home() {
 
   return (
     <Container>
+      {/* {dishes} */}
       {user.isAdmin === 1 ? (
         <>
           <HeaderAdm handleSearch={handleSearch} />
@@ -79,6 +85,7 @@ export function Home() {
 
         <div className="sections">
           <h2>Refeições</h2>
+          <DishList dishes={dishes} />
           <Section>
             <button
               className="scrollLeft"
@@ -86,9 +93,7 @@ export function Home() {
             >
               &lt;
             </button>
-            <div className="cards" ref={dishesCardsContainerRef}>
-              <Card />
-            </div>
+            <div className="cards" ref={dishesCardsContainerRef}></div>
             <button
               className="scrollRight"
               onClick={() => scrollRight(dishesCardsContainerRef)}
@@ -105,9 +110,7 @@ export function Home() {
             >
               &lt;
             </button>
-            <div className="cards" ref={dessertsCardsContainerRef}>
-              <Card />
-            </div>
+            <div className="cards" ref={dessertsCardsContainerRef}></div>
             <button
               className="scrollRight"
               onClick={() => scrollRight(dessertsCardsContainerRef)}
@@ -125,9 +128,7 @@ export function Home() {
             >
               &lt;
             </button>
-            <div className="cards" ref={drinksCardsContainerRef}>
-              <Card />
-            </div>
+            <div className="cards" ref={drinksCardsContainerRef}></div>
             <button
               className="scrollRight"
               onClick={() => scrollRight(drinksCardsContainerRef)}

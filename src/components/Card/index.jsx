@@ -9,7 +9,7 @@ import { useAuth } from "../../hooks/auth";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export function Card() {
+export function Card({ dish }) {
   const { user } = useAuth();
   const isAdmin = user.isAdmin === 1;
 
@@ -29,14 +29,14 @@ export function Card() {
           </>
         )}
 
-        <img src={DishImg} />
+        <img src={dish.image} />
         <div className="dishTitle">
           <h1>
-            Prugna Pie
+            {dish.title}
             <FiChevronRight className="arrow" />
           </h1>
-          <p>Massa fresca com camarões e pesto.</p>
-          <span>R$ 25,00</span>
+          <p> {dish.description}</p>
+          <span>R$ {dish.price}</span>
         </div>
 
         <div className="bottomRow">

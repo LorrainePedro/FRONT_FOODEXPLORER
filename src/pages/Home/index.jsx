@@ -88,10 +88,6 @@ export function Home() {
             </button>
             <div className="cards" ref={dishesCardsContainerRef}>
               <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
             </div>
             <button
               className="scrollRight"
@@ -110,10 +106,6 @@ export function Home() {
               &lt;
             </button>
             <div className="cards" ref={dessertsCardsContainerRef}>
-              <Card />
-              <Card />
-              <Card />
-              <Card />
               <Card />
             </div>
             <button
@@ -134,10 +126,6 @@ export function Home() {
               &lt;
             </button>
             <div className="cards" ref={drinksCardsContainerRef}>
-              <Card />
-              <Card />
-              <Card />
-              <Card />
               <Card />
             </div>
             <button

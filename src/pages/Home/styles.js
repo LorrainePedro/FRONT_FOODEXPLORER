@@ -140,7 +140,7 @@ export const Section = styled.div`
       display: block;
       position: absolute;
       border: none;
-      background: linear-gradient(90deg, rgba(0, 10, 10, 0.1) 0%, #000a0f 100%);
+      background: transparent;
       font-size: 5rem;
       font-weight: 100;
       color: white;

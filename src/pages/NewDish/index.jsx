@@ -26,8 +26,15 @@ import { useState } from "react";
 export function NewDish() {
   const navigate = useNavigate();
 
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const [category, setCategory] = useState("");
+
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
+
+  const [image, setImage] = useState(null);
 
   function handleAddIngredient() {
     setIngredients((prevState) => [...prevState, newIngredient]);
@@ -40,29 +47,21 @@ export function NewDish() {
     );
   }
 
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [category, setCategory] = useState("");
-  const [image, setImage] = useState(null);
-
   async function handleNewDish() {
-    const fileUpload = new FormData();
-
     if (!title) {
-      return alert("Preencha titulo");
+      return alert("Falta preencher o campo título");
     }
     if (!description) {
-      return alert("Preencha desc");
+      return alert("Falta preencher o campo descrição");
     }
     if (!price) {
-      return alert("Preencha price");
+      return alert("Falta preencher o campo preço");
     }
     if (!category) {
-      return alert("Preencha cat");
+      return alert("Falta preencher o campo categoria");
     }
     if (!image) {
-      return alert("Preencha img");
+      return alert("Faltou fazer o upload da imagem desejada");
     }
 
     if (newIngredient.length > 0) {
@@ -70,35 +69,18 @@ export function NewDish() {
         "Você deixou um ingrediente pedente no campo para adicionar."
       );
     }
+    const formData = new FormData();
+    formData.append("image", image);
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("category", category);
+    formData.append("price", price);
 
-    try {
-      const response = await api.post("/dishes", {
-        title,
-        price,
-        ingredients,
-        description,
-        category,
-      });
+    ingredients.map((ingredient) => formData.append("ingredients", ingredient));
 
-      const dish_id = response.data.dishes_id;
-
-      fileUpload.append("image", image);
-
-      const config = {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      };
-
-      await api.patch(`/dishes/image/${dish_id}`, fileUpload, config); //MEXI NO DISH PARA DISHES
-
-      alert("Prato criado com sucesso!");
-      navigate("/");
-    } catch (error) {
-      if (error.message) {
-        return alert("Não foi possivel cadastrar o prato.");
-      }
-    }
+    api.post("/dishes", formData);
+    alert("Prato cadastrado com sucesso");
+    navigate("/");
   }
 
   return (
@@ -113,7 +95,7 @@ export function NewDish() {
         </div>
         <h1>Adicionar prato</h1>
 
-        <Form encType="multipart/form-data">
+        <Form>
           <InputWrapper>
             <div className="imgNew">
               <span>Imagem do prato</span>

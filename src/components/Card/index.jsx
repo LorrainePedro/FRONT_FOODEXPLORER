@@ -7,6 +7,7 @@ import DishImg from "../../assets/ravanello.png";
 import { BiHeart, BiSolidPencil } from "react-icons/bi";
 import { useAuth } from "../../hooks/auth";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export function Card() {
   const { user } = useAuth();

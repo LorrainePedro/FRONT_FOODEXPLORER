@@ -108,6 +108,8 @@ export const MainImg = styled.div`
   }
 `;
 
+export const Carousel = styled.div``;
+
 export const Section = styled.div`
   display: flex;
   //flex-direction: column;

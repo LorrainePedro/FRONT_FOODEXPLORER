@@ -9,8 +9,6 @@ export function DishList({ dishes }) {
       {dishes.map((dish, index) => (
         <div key={index}>
           <Card dish={dish} />
-          <h2>{dish.name}</h2>
-          <p>{dish.description}</p>
         </div>
       ))}
     </Container>

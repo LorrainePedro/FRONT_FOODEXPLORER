@@ -8,6 +8,7 @@ import { BiHeart, BiSolidPencil } from "react-icons/bi";
 import { useAuth } from "../../hooks/auth";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { api } from "../../services/api";
 
 export function Card({ dish }) {
   const { user } = useAuth();

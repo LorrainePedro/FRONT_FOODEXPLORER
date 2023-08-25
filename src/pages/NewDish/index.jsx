@@ -23,7 +23,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 
-export function NewDish() {
+export function NewDish(dish) {
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
@@ -34,7 +34,15 @@ export function NewDish() {
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
 
-  const [image, setImage] = useState(null);
+  const [imageFile, setImageFile] = useState(null);
+
+  function handleChangeImage(event) {
+    const file = event.target.files[0];
+    setImageFile(file);
+
+    const imagePreview = URL.createObjectURL(file);
+    setImage(imagePreview);
+  }
 
   function handleAddIngredient() {
     setIngredients((prevState) => [...prevState, newIngredient]);
@@ -60,7 +68,7 @@ export function NewDish() {
     if (!category) {
       return alert("Falta preencher o campo categoria");
     }
-    if (!image) {
+    if (!imageFile) {
       return alert("Faltou fazer o upload da imagem desejada");
     }
 
@@ -69,8 +77,9 @@ export function NewDish() {
         "Você deixou um ingrediente pedente no campo para adicionar."
       );
     }
+
     const formData = new FormData();
-    formData.append("image", image);
+    formData.append("image", imageFile);
     formData.append("title", title);
     formData.append("description", description);
     formData.append("category", category);
@@ -78,7 +87,7 @@ export function NewDish() {
 
     ingredients.map((ingredient) => formData.append("ingredients", ingredient));
 
-    api.post("/dishes", formData);
+    await api.post("/dishes", formData);
     alert("Prato cadastrado com sucesso");
     navigate("/");
   }
@@ -105,7 +114,7 @@ export function NewDish() {
                 <input
                   type="file"
                   className="addFile"
-                  onChange={(e) => setImage(e.target.files[0])}
+                  onChange={handleChangeImage}
                 />
               </ImageUpload>
             </div>

@@ -14,7 +14,7 @@ export const Container = styled.div`
 
   .favoriteSvg,
   .pencilSvg {
-    position: relative;
+    // position: relative;
     bottom: 8rem;
     left: 15rem;
 

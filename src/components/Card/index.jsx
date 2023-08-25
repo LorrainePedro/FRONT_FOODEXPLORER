@@ -13,6 +13,7 @@ import { api } from "../../services/api";
 export function Card({ dish }) {
   const { user } = useAuth();
   const isAdmin = user.isAdmin === 1;
+  const imageURL = `${api.defaults.baseURL}/files/dishFiles/${dish.image}`;
 
   return (
     <Container>

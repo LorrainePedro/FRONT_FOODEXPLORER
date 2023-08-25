@@ -83,7 +83,10 @@ export function Home() {
           </div>
         </MainImg>
 
-        <div className="sections">
+        <div className="futureSection">
+          <DishList dishes={dishes} />
+        </div>
+        {/* <div className="sections">
           <h2>Refeições</h2>
           <DishList dishes={dishes} />
           <Section>
@@ -136,7 +139,7 @@ export function Home() {
               &gt;
             </button>
           </Section>
-        </div>
+        </div> */}
       </Main>
       <Footer />
     </Container>

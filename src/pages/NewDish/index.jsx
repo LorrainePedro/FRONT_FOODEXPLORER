@@ -23,7 +23,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 
-export function NewDish(dish) {
+export function NewDish() {
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
@@ -34,15 +34,7 @@ export function NewDish(dish) {
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
 
-  const [imageFile, setImageFile] = useState(null);
-
-  function handleChangeImage(event) {
-    const file = event.target.files[0];
-    setImageFile(file);
-
-    const imagePreview = URL.createObjectURL(file);
-    setImage(imagePreview);
-  }
+  const [image, setImage] = useState(null);
 
   function handleAddIngredient() {
     setIngredients((prevState) => [...prevState, newIngredient]);
@@ -68,18 +60,15 @@ export function NewDish(dish) {
     if (!category) {
       return alert("Falta preencher o campo categoria");
     }
-    if (!imageFile) {
+    if (!image) {
       return alert("Faltou fazer o upload da imagem desejada");
     }
 
-    if (newIngredient.length > 0) {
-      return alert(
-        "Você deixou um ingrediente pedente no campo para adicionar."
-      );
+    if (ingredients.length < 2) {
+      return alert("Você precisa adicionar ao menos dois ingredientes.");
     }
-
     const formData = new FormData();
-    formData.append("image", imageFile);
+    formData.append("image", image);
     formData.append("title", title);
     formData.append("description", description);
     formData.append("category", category);
@@ -87,7 +76,7 @@ export function NewDish(dish) {
 
     ingredients.map((ingredient) => formData.append("ingredients", ingredient));
 
-    await api.post("/dishes", formData);
+    api.post("/dishes", formData);
     alert("Prato cadastrado com sucesso");
     navigate("/");
   }
@@ -114,7 +103,7 @@ export function NewDish(dish) {
                 <input
                   type="file"
                   className="addFile"
-                  onChange={handleChangeImage}
+                  onChange={(e) => setImage(e.target.files[0])}
                 />
               </ImageUpload>
             </div>

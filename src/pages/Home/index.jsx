@@ -50,7 +50,14 @@ export function Home() {
     async function fetchDishes() {
       try {
         const response = await api.get(`/dishes?title=${search}`);
-        setDishes(response.data);
+
+        const dishesWithImage = response.data.map((dish) => ({
+          ...dish,
+          image: `${api.defaults.baseURL}/files/dishFiles/${dish.image}`,
+        }));
+
+        setDishes(dishesWithImage);
+        console.log(dishesWithImage);
       } catch (error) {
         console.log(error);
       }
@@ -83,10 +90,7 @@ export function Home() {
           </div>
         </MainImg>
 
-        <div className="futureSection">
-          <DishList dishes={dishes} />
-        </div>
-        {/* <div className="sections">
+        <div className="sections">
           <h2>Refeições</h2>
           <DishList dishes={dishes} />
           <Section>
@@ -139,7 +143,7 @@ export function Home() {
               &gt;
             </button>
           </Section>
-        </div> */}
+        </div>
       </Main>
       <Footer />
     </Container>

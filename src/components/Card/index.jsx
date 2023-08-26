@@ -3,7 +3,6 @@ import { Container } from "./styles";
 import { Button } from "../../components/Button";
 
 import { FiPlus, FiMinus, FiChevronRight } from "react-icons/fi";
-import DishImg from "../../assets/ravanello.png";
 import { BiHeart, BiSolidPencil } from "react-icons/bi";
 import { useAuth } from "../../hooks/auth";
 import { Link } from "react-router-dom";

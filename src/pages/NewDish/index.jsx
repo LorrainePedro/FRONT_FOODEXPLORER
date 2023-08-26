@@ -27,13 +27,11 @@ export function NewDish() {
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("main-dish");
   const [price, setPrice] = useState("");
-  const [category, setCategory] = useState("");
-
+  const [description, setDescription] = useState("");
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
-
   const [image, setImage] = useState(null);
 
   function handleAddIngredient() {
@@ -45,6 +43,11 @@ export function NewDish() {
     setIngredients((prevState) =>
       prevState.filter((ingredient) => ingredient !== deleted)
     );
+  }
+
+  function handleImage(e) {
+    const file = e.target.files[0];
+    setImage(file);
   }
 
   async function handleNewDish() {
@@ -76,9 +79,19 @@ export function NewDish() {
 
     ingredients.map((ingredient) => formData.append("ingredients", ingredient));
 
-    api.post("/dishes", formData);
-    alert("Prato cadastrado com sucesso");
-    navigate("/");
+    await api
+      .post("/dishes", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      })
+      .then(() => {
+        alert("Prato criado com sucesso!");
+        navigate("/");
+      })
+      .catch((error) => {
+        if (error.response) {
+          alert(error.response.data.message);
+        }
+      });
   }
 
   return (
@@ -100,11 +113,7 @@ export function NewDish() {
               <ImageUpload>
                 <MdOutlineFileUpload size={24} />
                 <h2>Selecione a imagem</h2>
-                <input
-                  type="file"
-                  className="addFile"
-                  onChange={(e) => setImage(e.target.files[0])}
-                />
+                <input type="file" className="addFile" onChange={handleImage} />
               </ImageUpload>
             </div>
 

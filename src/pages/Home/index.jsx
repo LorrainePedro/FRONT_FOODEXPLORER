@@ -19,6 +19,21 @@ export function Home() {
   const [dishes, setDishes] = useState([]);
   const [search, setSearch] = useState("");
 
+  function handleDetails(id) {
+    navigate(`/details/${id}`);
+  }
+
+  useEffect(() => {
+    async function fetchDish() {
+      const response = await api.get(
+        `/dishes?title=${search}&ingredient=${search}`
+      );
+      setDishes(response.data);
+    }
+
+    fetchDish();
+  }, [search]);
+
   //for each section
   const dishesCardsContainerRef = useRef(null);
   const dessertsCardsContainerRef = useRef(null);
@@ -46,27 +61,27 @@ export function Home() {
     console.alert("get.dishes");
   }
 
-  useEffect(() => {
-    async function fetchDishes() {
-      try {
-        const response = await api.get(`/dishes?title=${search}`);
+  // useEffect(() => {
+  //   async function fetchDishes() {
+  //     try {
+  //       const response = await api.get(`/dishes?title=${search}`);
 
-        const dishesWithImage = response.data.map((dish) => ({
-          ...dish,
-          image: `${api.defaults.baseURL}/files/dishFiles/${dish.image}`,
-        }));
+  //       const dishesWithImage = response.data.map((dish) => ({
+  //         ...dish,
+  //         image: `${api.defaults.baseURL}/files/dishFiles/${dish.image}`,
+  //       }));
 
-        setDishes(dishesWithImage);
-        console.log(dishesWithImage);
-      } catch (error) {
-        console.log(error);
-      }
-    }
+  //       setDishes(dishesWithImage);
+  //       console.log(dishesWithImage);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
 
-    fetchDishes("refeições");
-    fetchDishes("sobremesas");
-    fetchDishes("bebidas");
-  }, [search]);
+  //   fetchDishes("refeições");
+  //   fetchDishes("sobremesas");
+  //   fetchDishes("bebidas");
+  // }, [search]);
 
   return (
     <Container>

@@ -13,7 +13,8 @@ import { api } from "../../services/api";
 export function Card({ dish }) {
   const { user } = useAuth();
   const isAdmin = user.isAdmin === 1;
-  const imageURL = `${api.defaults.baseURL}/files/dishFiles/${dish.image}`;
+  const imageURL = `${api.defaults.baseURL}/files/${dish.image}`;
+  console.log(imageURL);
 
   return (
     <Container>
@@ -31,7 +32,8 @@ export function Card({ dish }) {
           </>
         )}
 
-        <img src={dish.image} />
+        <img src={imageURL} alt={`Imagem do prato ${dish.title}`} />
+
         <div className="dishTitle">
           <h1>
             {dish.title}

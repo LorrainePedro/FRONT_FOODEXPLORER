@@ -27,7 +27,7 @@ export function NewDish() {
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
-  const [category, setCategory] = useState("main-dish");
+  const [category, setCategory] = useState(null);
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [ingredients, setIngredients] = useState([]);
@@ -45,7 +45,7 @@ export function NewDish() {
     );
   }
 
-  function handleImage(e) {
+  function handleAddImage(e) {
     const file = e.target.files[0];
     setImage(file);
   }
@@ -89,7 +89,9 @@ export function NewDish() {
       })
       .catch((error) => {
         if (error.response) {
-          alert(error.response.data.message);
+          alert(
+            "Ops, algum erro ocorreu. O prato infelizmente não foi cadastrado!"
+          ); //error.response.data.message
         }
       });
   }
@@ -113,7 +115,11 @@ export function NewDish() {
               <ImageUpload>
                 <MdOutlineFileUpload size={24} />
                 <h2>Selecione a imagem</h2>
-                <input type="file" className="addFile" onChange={handleImage} />
+                <input
+                  type="file"
+                  className="addFile"
+                  onChange={handleAddImage}
+                />
               </ImageUpload>
             </div>
 

@@ -6,52 +6,99 @@ import {
   BottomRow,
   Image,
 } from "./styles";
+import { HeaderAdm } from "../../components/HeaderAdm";
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
+import { ButtonText } from "../../components/ButtonText";
 import { Footer } from "../../components/Footer";
 import { Tags } from "../../components/Tags";
 import { FiChevronLeft, FiChevronRight, FiPlus, FiMinus } from "react-icons/fi";
-import DishImg from "../../assets/ravanello.png";
+
+import React from "react";
+import { useState, useEffect } from "react";
+
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { api } from "../../services/api";
+import { useAuth } from "../../hooks/auth";
 
 export function Details() {
+  const { user } = useAuth();
+  const isAdmin = user.isAdmin === 1;
+
+  const [data, setData] = useState(null);
+  const [search, setSearch] = useState("");
+
+  const params = useParams();
+  const navigate = useNavigate();
+
+  const imageURL = data && `${api.defaults.baseURL}/files/${data.image}`;
+
+  function handleSearch(e) {
+    setSearch(e.target.value);
+  }
+
+  useEffect(() => {
+    async function fetchDish() {
+      const response = await api.get(`/dishes/${params.id}`);
+      setData(response.data);
+      // console.log(response.data);
+    }
+
+    fetchDish();
+  }, []);
+
   return (
     <Container>
-      <Header />
-      <Content>
-        <Image>
-          <a href="/">
-            {" "}
-            <FiChevronLeft size={32} /> voltar
-          </a>
-          <img src={DishImg} alt="Imagem do prato" />
-        </Image>
+      {user.isAdmin === 1 ? (
+        <>
+          <HeaderAdm handleSearch={handleSearch} />
+        </>
+      ) : (
+        <>
+          <Header handleSearch={handleSearch}></Header>
+        </>
+      )}
+      {data && (
+        <Content>
+          <Image>
+            <button className="backButton" onClick={() => navigate(-1)}>
+              <FiChevronLeft size={38} />
+              <h2>Voltar</h2>
+            </button>
 
-        <Description>
-          <h1>Salada Ravanello </h1>
+            <img src={imageURL} alt="Salada Ravanello" />
+          </Image>
 
-          <p>
-            Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
-          </p>
+          <Description>
+            <h1>{data.title} </h1>
 
-          <IngredientTags>
-            <Tags title="alface" />
-            <Tags title="cebola" />
-            <Tags title="pão naan" />
-            <Tags title="pepino" />
-            <Tags title="rabanete" />
-            <Tags title="tomate" />
-          </IngredientTags>
+            <p>{data.description}</p>
 
-          <BottomRow>
-            <div className="amount">
-              <FiMinus size={20.4} />
-              <p>01</p>
-              <FiPlus size={20.4} />
-            </div>
-            <Button title="Incluir - R$25,00" />
-          </BottomRow>
-        </Description>
-      </Content>
+            <IngredientTags>
+              {data.ingredients &&
+                data.ingredients.map((ingredient) => (
+                  <Tags key={ingredient.id} title={ingredient.name} />
+                ))}
+            </IngredientTags>
+
+            <BottomRow>
+              <div className="amount">
+                <FiMinus size={20.4} />
+                <p>01</p>
+                <FiPlus size={20.4} />
+              </div>
+
+              {isAdmin ? (
+                <Link to={`/edit/${params.id}`}>
+                  <Button title="Editar prato" />
+                </Link>
+              ) : (
+                <Button title="Incluir - R$25,00" />
+              )}
+            </BottomRow>
+          </Description>
+        </Content>
+      )}
       <Footer />
     </Container>
   );

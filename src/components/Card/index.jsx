@@ -20,7 +20,7 @@ export function Card({ dish }) {
       <div className="Card">
         {user.isAdmin === 1 ? (
           <>
-            <Link to="/edit/1">
+            <Link to={`/edit/${dish.id}`}>
               {" "}
               <BiSolidPencil className="pencilSvg" />
             </Link>
@@ -30,27 +30,26 @@ export function Card({ dish }) {
             <BiHeart className="favoriteSvg" />
           </>
         )}
-
-        <img src={imageURL} alt={`Imagem do prato ${dish.title}`} />
+        <Link to={`/details/${dish.id}`}>
+          <img src={imageURL} alt={`Imagem do prato ${dish.title}`} />
+        </Link>
 
         <div className="dishTitle">
-          <h1>
-            {dish.title}
-            <FiChevronRight className="arrow" />
-          </h1>
+          <h1>{dish.title} &gt;</h1>
           <p> {dish.description}</p>
           <span>R$ {dish.price}</span>
         </div>
 
-        <div className="bottomRow">
-          <div className="amount">
-            <FiMinus size={20.4} />
-            <p>01</p>
-            <FiPlus size={20.4} />
+        {!isAdmin && (
+          <div className="bottomRow">
+            <div className="amount">
+              <FiMinus size={27} />
+              <p>01</p>
+              <FiPlus size={27} />
+            </div>
+            <Button className="Btn" title="Incluir" />
           </div>
-
-          <Button className="Btn" title="Incluir" />
-        </div>
+        )}
       </div>
     </Container>
   );

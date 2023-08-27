@@ -11,10 +11,10 @@ export const Container = styled.div`
 
   grid-template-rows: 11.4rem auto 7.7rem;
 
-  .futureSection {
+  /* .futureSection {
     margin: 0 auto;
     padding: 8rem 26rem;
-  }
+  } */
 
   .sections {
     h2 {

@@ -30,7 +30,7 @@ export function EditDish() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState(null);
   const [image, setImage] = useState(null);
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
@@ -39,15 +39,22 @@ export function EditDish() {
     async function fetchDish() {
       const response = await api.get(`/dishes/${params.id}`);
 
-      const { title, description, price, ingredients, image } = response.data;
+      const { title, description, price, ingredients, category } =
+        response.data;
       setTitle(title);
       setDescription(description);
       setPrice(price);
+      setCategory(category);
       setIngredients(ingredients.map((ingredient) => ingredient.name));
     }
 
     fetchDish();
   }, []);
+
+  function handleAddImage(e) {
+    const file = e.target.files[0];
+    setImage(file);
+  }
 
   function handleAddIngredient() {
     setIngredients((prevState) => [...prevState, newIngredient]);
@@ -60,16 +67,23 @@ export function EditDish() {
     );
   }
 
-  function handleImage(e) {
-    const file = e.target.files[0];
-    setImage(file);
+  async function handleRemoveDish() {
+    const confirmed = confirm("Tem certeza que deseja deletar esse prato?");
+
+    if (confirmed) {
+      await api.delete(`/dishes/${params.id}`);
+      navigate("/");
+    }
   }
 
   async function handleEditDish(e) {
     e.preventDefault();
 
     if (!image) {
-      return alert("Adicione uma imagem para o prato para prosseguir");
+      return alert("Por favor, adicione uma imagem ao prato!");
+    }
+    if (!category) {
+      return alert("Falta preencher o campo categoria");
     }
 
     const formData = new FormData();
@@ -83,7 +97,9 @@ export function EditDish() {
     await api
       .put(`/dishes/${params.id}`, formData)
       .then(() => {
-        alert("Prato editado com sucesso!");
+        alert(
+          "O prato foi editado com sucesso! Redirecionaremos você aos detalhes do prato! ;) "
+        );
         navigate(-1);
       })
       .catch((error) => {
@@ -91,15 +107,6 @@ export function EditDish() {
           alert(error.response.data.message);
         }
       });
-  }
-
-  async function handleRemoveDish() {
-    const confirmed = confirm("Tem certeza que deseja deletar esse prato?");
-
-    if (confirmed) {
-      await api.delete(`/dishes/${params.id}`);
-      navigate("/");
-    }
   }
 
   return (
@@ -121,7 +128,11 @@ export function EditDish() {
               <ImageUpload>
                 <MdOutlineFileUpload size={24} />
                 <h2>Selecione a imagem</h2>
-                <input type="file" className="addFile" onChange={handleImage} />
+                <input
+                  type="file"
+                  className="addFile"
+                  onChange={handleAddImage}
+                />
               </ImageUpload>
             </div>
 
@@ -130,12 +141,17 @@ export function EditDish() {
               <Input
                 type="text"
                 placeholder="Ex: Salada Ceasar"
+                value={title}
                 onChange={(e) => setTitle(e.target.value)}
               />
             </div>
             <div className="selectNew">
               <span>Categoria</span>
-              <select onChange={(e) => setCategory(e.target.value)}>
+
+              <select
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+              >
                 <option value="refeicoes">Refeição</option>
                 <option value="sobremesas">Sobremesa</option>
                 <option value="bebidas">Bebida</option>
@@ -169,7 +185,7 @@ export function EditDish() {
               <Input
                 id="inputPrice"
                 type="number"
-                placeholder="R$ 00,00"
+                value={price}
                 onChange={(e) => setPrice(e.target.value)}
               />
             </div>
@@ -179,6 +195,7 @@ export function EditDish() {
             <span>Descrição</span>
             <Textarea
               placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+              defaultValue={description}
               onChange={(e) => setDescription(e.target.value)}
             />
 

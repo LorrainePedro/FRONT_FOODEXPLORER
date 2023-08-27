@@ -61,31 +61,8 @@ export function Home() {
     console.alert("get.dishes");
   }
 
-  // useEffect(() => {
-  //   async function fetchDishes() {
-  //     try {
-  //       const response = await api.get(`/dishes?title=${search}`);
-
-  //       const dishesWithImage = response.data.map((dish) => ({
-  //         ...dish,
-  //         image: `${api.defaults.baseURL}/files/dishFiles/${dish.image}`,
-  //       }));
-
-  //       setDishes(dishesWithImage);
-  //       console.log(dishesWithImage);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-
-  //   fetchDishes("refeições");
-  //   fetchDishes("sobremesas");
-  //   fetchDishes("bebidas");
-  // }, [search]);
-
   return (
     <Container>
-      {/* {dishes} */}
       {user.isAdmin === 1 ? (
         <>
           <HeaderAdm handleSearch={handleSearch} />

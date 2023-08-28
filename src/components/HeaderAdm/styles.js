@@ -24,7 +24,7 @@ export const Container = styled.header`
     display: none;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     justify-content: center;
     gap: 3.2rem;
 
@@ -72,7 +72,7 @@ export const Logo = styled.div`
     line-height: 160%;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     .logoAndName {
       h1 {
         width: 15rem;
@@ -87,7 +87,7 @@ export const Logo = styled.div`
 `;
 
 export const Logout = styled.div`
-  @media (max-width: 800px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;

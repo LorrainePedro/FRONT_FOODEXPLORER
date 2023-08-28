@@ -20,7 +20,7 @@ export const Container = styled.footer`
     font-weight: 500;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     position: fixed;
     bottom: 0;
     padding: 2.4rem 12rem;
@@ -47,7 +47,7 @@ export const Logo = styled.div`
     color: ${({ theme }) => theme.COLORS.LOGOFOOTER};
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     h1 {
       font-size: 2.4rem;
     }

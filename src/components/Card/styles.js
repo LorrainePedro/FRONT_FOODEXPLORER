@@ -17,7 +17,7 @@ export const Container = styled.div`
     width: 2.4rem;
     height: 2.2rem;
 
-    @media (min-width: 800px) {
+    @media (min-width: 1024px) {
       bottom: 19rem;
       left: 23rem;
     }
@@ -34,7 +34,7 @@ export const Container = styled.div`
     margin-bottom: 0.8rem;
     margin-top: 2rem;
 
-    @media (min-width: 800px) {
+    @media (min-width: 1024px) {
       margin-right: 4rem;
     }
   }
@@ -75,9 +75,8 @@ export const Container = styled.div`
       margin-bottom: 0.5rem;
     }
 
-    @media (min-width: 800px) {
+    @media (min-width: 1024px) {
       max-width: 28rem;
-      //  height: 46rem;
 
       h1 {
         height: 3.4rem;
@@ -130,7 +129,7 @@ export const Container = styled.div`
       line-height: 2.4rem;
     }
 
-    @media (min-width: 800px) {
+    @media (min-width: 1024px) {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -159,7 +158,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     min-width: 30.4rem;
     height: 46.2rem;
 

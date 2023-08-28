@@ -28,7 +28,7 @@ export const Container = styled.div`
       margin-bottom: 1.6rem;
     }
 
-    @media (min-width: 800px) {
+    @media (min-width: 1024px) {
       width: 112rem;
       margin: 0 auto;
 
@@ -52,15 +52,23 @@ export const MainImg = styled.div`
   background: linear-gradient(180deg, #091e26 0%, #00131c 100%);
   position: relative;
 
-  height: 12rem;
-  width: 37.6rem;
-  margin-top: 4.4rem;
-  margin-left: 3rem;
-  margin-bottom: 6.2rem;
-
   display: flex;
   align-items: center;
   border-radius: 0.3rem;
+  margin: 0 auto;
+  margin-top: 4.4rem;
+
+  height: 12rem;
+  width: 100%;
+
+  @media (min-width: 428px) {
+    width: 37.6rem;
+  }
+
+  @media (min-width: 600px) {
+    margin-left: 5rem;
+    width: 100%;
+  }
 
   > img {
     margin-left: -3rem;
@@ -87,7 +95,7 @@ export const MainImg = styled.div`
     }
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     width: 112rem;
     height: 26rem;
     display: flex;
@@ -113,11 +121,8 @@ export const MainImg = styled.div`
   }
 `;
 
-export const Carousel = styled.div``;
-
 export const Section = styled.div`
   display: flex;
-  //flex-direction: column;
   width: 41.2rem;
   margin-left: 2.4rem;
   margin-bottom: 2.4rem;
@@ -139,7 +144,7 @@ export const Section = styled.div`
     display: none;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     width: 112rem;
 
     .scrollLeft,

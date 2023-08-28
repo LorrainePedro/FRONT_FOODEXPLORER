@@ -19,42 +19,46 @@ export const Content = styled.div`
   height: 68rem;
   border: 1px solid red;
 
+  > .backButton {
+    color: ${({ theme }) => theme.COLORS.GRAY};
+    line-height: 140%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    border: 1px solid blue;
+    margin-bottom: 1.6rem;
+    //margin-top: 2.6rem;
+  }
+
   @media (min-width: 1024px) {
+    display: flex;
+    flex-direction: column;
     border: 1px solid red;
     width: 113rem;
+
     //height: 47rem;
-    display: flex;
 
     gap: 4.7rem;
 
-    //flex-direction: row;
-    //align-items: center;
-    // margin: 0 auto;
+    .main {
+      display: flex;
+
+      gap: 4.7rem;
+      align-items: center;
+      align-content: center;
+      align-self: center;
+    }
   }
 `;
 export const Image = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-content: center;
   margin-bottom: 1.6rem;
+  //align-content: center;
+
   img {
     width: 26.4rem;
-  }
-
-  > .backButton {
-    position: relative;
-    margin-right: 20rem;
-    border: 1px solid blue;
-    color: ${({ theme }) => theme.COLORS.WHITE};
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-
-    line-height: 140%;
-    font-weight: 300;
-    margin-bottom: 1.6rem;
-    margin-top: 2.6rem;
   }
 
   @media (min-width: 1024px) {
@@ -62,9 +66,9 @@ export const Image = styled.div`
       width: 39rem;
     }
 
-    .backButton {
+    /* .backButton {
       margin-bottom: 4.2rem;
-    }
+    } */
   }
 `;
 
@@ -74,18 +78,14 @@ export const Description = styled.div`
   gap: 2rem;
 
   > h1 {
-    font-weight: 100;
     font-size: 2.7rem;
-    line-height: 140%;
-  }
-
-  > p {
-    line-height: 140%;
   }
 
   > h1,
   p {
     text-align: center;
+    line-height: 140%;
+    font-weight: 300;
     color: ${({ theme }) => theme.COLORS.GRAY};
   }
 
@@ -93,17 +93,13 @@ export const Description = styled.div`
     border: 1px solid green;
     width: 69rem;
     height: 30rem;
-    margin-top: 15.3rem;
 
     > h1 {
       font-size: 4rem;
-      // font-family: "Poppins";
       font-weight: 500;
     }
     p {
-      //  font-family: "Poppins";
       font-size: 2.4rem;
-      line-height: 140%;
     }
 
     > h1,
@@ -115,11 +111,12 @@ export const Description = styled.div`
 export const IngredientTags = styled.div`
   display: grid;
   justify-items: center;
+  margin-top: 2.4rem;
   // padding-right: 2.5rem;
   //padding-left: 2.5rem;
 
   grid-template-columns: 1fr 1fr 1fr;
-  // row-gap: 2.4rem;
+  row-gap: 2.4rem;
 
   @media (min-width: 1024px) {
     display: flex;
@@ -128,13 +125,15 @@ export const IngredientTags = styled.div`
 `;
 export const BottomRow = styled.div`
   display: flex;
-  margin-top: 1rem;
+  margin-top: 4rem;
 
   .amount {
     display: flex;
     align-items: center;
     gap: 1.6rem;
     margin-right: 2rem;
+
+    //
 
     > p {
       font-family: "Roboto", sans-serif;
@@ -145,22 +144,28 @@ export const BottomRow = styled.div`
   }
 
   button {
-    width: 19rem;
+    background-color: #750310;
+    width: 31.6rem;
     height: 3.8rem;
-    font-size: 0.9rem;
-    border-radius: 0.4rem;
-    margin-left: 1rem;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    padding: 2.4rem 1.2rem;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
+    margin-top: -0.1rem;
     button {
-      width: 16.2rem;
+      position: relative;
+      top: 1rem;
+      min-width: 16.2rem;
       font-size: 1.4rem;
       line-height: 2.4rem;
       font-weight: 100;
       padding: 2rem 2.4rem;
+    }
 
-      background-color: #750310;
+    .amount {
+      margin-top: 1.5rem;
     }
   }
 `;

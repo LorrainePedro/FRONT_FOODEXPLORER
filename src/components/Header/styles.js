@@ -29,7 +29,7 @@ export const Container = styled.header`
     margin-left: -6rem;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     justify-content: center;
 
     .menu {
@@ -71,7 +71,7 @@ export const Logo = styled.div`
     font-size: 2.1rem;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     display: flex;
     position: relative;
 
@@ -82,7 +82,7 @@ export const Logo = styled.div`
 `;
 
 export const Logout = styled.div`
-  @media (max-width: 800px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;

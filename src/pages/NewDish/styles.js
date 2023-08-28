@@ -82,7 +82,6 @@ export const Content = styled.div`
 
 export const Form = styled.div`
   width: 36.5rem;
-  /* height: 100vh; */
 
   @media (min-width: 1024px) {
     width: 112rem;

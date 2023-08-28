@@ -60,43 +60,47 @@ export function Details() {
       )}
       {data && (
         <Content>
-          <Image>
-            <button className="backButton" onClick={() => navigate(-1)}>
-              <FiChevronLeft size={38} />
-              <h2>Voltar</h2>
-            </button>
+          <button className="backButton" onClick={() => navigate(-1)}>
+            <FiChevronLeft size={38} />
+            <h2>voltar</h2>
+          </button>
 
-            <img src={imageURL} alt="Salada Ravanello" />
-          </Image>
+          <div className="main">
+            <Image>
+              <img src={imageURL} alt="Salada Ravanello" />
+            </Image>
 
-          <Description>
-            <h1>{data.title} </h1>
+            <Description>
+              <h1>{data.title} </h1>
 
-            <p>{data.description}</p>
+              <p>{data.description}</p>
 
-            <IngredientTags>
-              {data.ingredients &&
-                data.ingredients.map((ingredient) => (
-                  <Tags key={ingredient.id} title={ingredient.name} />
-                ))}
-            </IngredientTags>
+              <IngredientTags>
+                {data.ingredients &&
+                  data.ingredients.map((ingredient) => (
+                    <Tags key={ingredient.id} title={ingredient.name} />
+                  ))}
+              </IngredientTags>
 
-            <BottomRow>
-              <div className="amount">
-                <FiMinus size={20.4} />
-                <p>01</p>
-                <FiPlus size={20.4} />
-              </div>
+              <BottomRow>
+                {!isAdmin && (
+                  <div className="amount">
+                    <FiMinus size={20.4} />
+                    <p>01</p>
+                    <FiPlus size={20.4} />
+                  </div>
+                )}
 
-              {isAdmin ? (
-                <Link to={`/edit/${params.id}`}>
-                  <Button title="Editar prato" />
-                </Link>
-              ) : (
-                <Button title="Incluir - R$25,00" />
-              )}
-            </BottomRow>
-          </Description>
+                {isAdmin ? (
+                  <Link to={`/edit/${params.id}`}>
+                    <Button title="Editar prato" />
+                  </Link>
+                ) : (
+                  <Button title="Incluir - R$25,00" />
+                )}
+              </BottomRow>
+            </Description>
+          </div>
         </Content>
       )}
       <Footer />

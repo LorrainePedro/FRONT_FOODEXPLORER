@@ -86,6 +86,7 @@ export const Container = styled.div`
       }
 
       p {
+        text-align: center;
         font-size: 1.4rem;
         line-height: 160%;
         height: 4.4rem;

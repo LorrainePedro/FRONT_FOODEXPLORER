@@ -5,7 +5,6 @@ import { Card } from "../../components/Card";
 import { Header } from "../../components/Header";
 import { HeaderAdm } from "../../components/HeaderAdm";
 import { DishList } from "../../components/DishList";
-import { CategorySection } from "../../components/CategorySection";
 import { api } from "../../services/api";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";

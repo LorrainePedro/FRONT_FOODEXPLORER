@@ -28,28 +28,12 @@ export function EditDish() {
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
   const [category, setCategory] = useState(null);
-  const [image, setImage] = useState(null);
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
-
-  useEffect(() => {
-    async function fetchDish() {
-      const response = await api.get(`/dishes/${params.id}`);
-
-      const { title, description, price, ingredients, category } =
-        response.data;
-      setTitle(title);
-      setDescription(description);
-      setPrice(price);
-      setCategory(category);
-      setIngredients(ingredients.map((ingredient) => ingredient.name));
-    }
-
-    fetchDish();
-  }, []);
+  const [image, setImage] = useState(null);
 
   function handleAddImage(e) {
     const file = e.target.files[0];
@@ -82,17 +66,25 @@ export function EditDish() {
     if (!image) {
       return alert("Por favor, adicione uma imagem ao prato!");
     }
-    if (!category) {
-      return alert("Falta preencher o campo categoria");
+
+    if (ingredients.length < 2) {
+      return alert("Você precisa adicionar ao menos dois ingredientes.");
+    }
+
+    if (ingredients.length > 6) {
+      return alert("O número máximo de ingredientes permitidos é 6.");
     }
 
     const formData = new FormData();
     formData.append("image", image);
     formData.append("title", title);
     formData.append("description", description);
+    formData.append("category", category);
     formData.append("price", price);
 
-    ingredients.map((ingredient) => formData.append("ingredients", ingredient));
+    ingredients.forEach((ingredient) => {
+      formData.append("ingredients[]", ingredient);
+    });
 
     await api
       .put(`/dishes/${params.id}`, formData)
@@ -104,10 +96,28 @@ export function EditDish() {
       })
       .catch((error) => {
         if (error.response) {
-          alert(error.response.data.message);
+          alert(
+            "Ops, algum erro ocorreu. O prato infelizmente não foi atualizado! ;("
+          );
         }
       });
   }
+
+  useEffect(() => {
+    async function fetchDish() {
+      const response = await api.get(`/dishes/${params.id}`);
+
+      const { title, description, price, ingredients, category } =
+        response.data;
+      setTitle(title);
+      setDescription(description);
+      setPrice(price);
+      setCategory(category);
+      setIngredients(ingredients.map((ingredient) => ingredient.name));
+    }
+
+    fetchDish();
+  }, []);
 
   return (
     <Container>
@@ -184,9 +194,14 @@ export function EditDish() {
               <span>Preço</span>
               <Input
                 id="inputPrice"
-                type="number"
+                type="text"
+                placeholder="R$ 00,00"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
+                onBlur={(e) => {
+                  const formattedPrice = e.target.value.replace(".", ",");
+                  setPrice(formattedPrice);
+                }}
               />
             </div>
           </div>

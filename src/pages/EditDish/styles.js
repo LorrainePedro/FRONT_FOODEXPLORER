@@ -140,8 +140,11 @@ export const ImageUpload = styled.div`
 
   .addFile {
     position: absolute;
-    width: 34rem;
+    width: 36rem;
+    height: 4.8rem;
     opacity: 0;
+
+    margin-left: -2rem;
   }
 
   h2 {
@@ -151,6 +154,12 @@ export const ImageUpload = styled.div`
     font-weight: 100;
     line-height: 2.4rem;
     padding: 0.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .addFile {
+      width: 23rem;
+    }
   }
 `;
 

@@ -33,6 +33,12 @@ export function NewDish() {
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
   const [image, setImage] = useState(null);
+  const [showTagsInTwoLines, setShowTagsInTwoLines] = useState(false);
+
+  function handleAddImage(e) {
+    const file = e.target.files[0];
+    setImage(file);
+  }
 
   function handleAddIngredient() {
     setIngredients((prevState) => [...prevState, newIngredient]);
@@ -43,11 +49,6 @@ export function NewDish() {
     setIngredients((prevState) =>
       prevState.filter((ingredient) => ingredient !== deleted)
     );
-  }
-
-  function handleAddImage(e) {
-    const file = e.target.files[0];
-    setImage(file);
   }
 
   async function handleNewDish() {
@@ -70,6 +71,10 @@ export function NewDish() {
     if (ingredients.length < 2) {
       return alert("Você precisa adicionar ao menos dois ingredientes.");
     }
+
+    if (ingredients.length > 6) {
+      return alert("O número máximo de ingredientes permitidos é 6.");
+    }
     const formData = new FormData();
     formData.append("image", image);
     formData.append("title", title);
@@ -84,16 +89,22 @@ export function NewDish() {
         headers: { "Content-Type": "multipart/form-data" },
       })
       .then(() => {
-        alert("Prato criado com sucesso!");
+        alert(
+          "O prato criado com sucesso! Redirecionaremos você para a página principal! ;) "
+        );
         navigate("/");
       })
       .catch((error) => {
         if (error.response) {
           alert(
             "Ops, algum erro ocorreu. O prato infelizmente não foi cadastrado!"
-          ); //error.response.data.message
+          );
         }
       });
+
+    useEffect(() => {
+      setShowTagsInTwoLines(ingredients.length >= 3);
+    }, [ingredients]);
   }
 
   return (
@@ -142,7 +153,7 @@ export function NewDish() {
           </InputWrapper>
 
           <div className="ingredientsRow">
-            <IngredientsTags>
+            <IngredientsTags showTagsInTwoLines={showTagsInTwoLines}>
               <span>Ingredientes</span>
               <div className="addTags">
                 {ingredients.map((ingredient, index) => (
@@ -166,9 +177,13 @@ export function NewDish() {
               <span>Preço</span>
               <Input
                 id="inputPrice"
-                type="number"
+                type="text"
                 placeholder="R$ 00,00"
                 onChange={(e) => setPrice(e.target.value)}
+                onBlur={(e) => {
+                  const formattedPrice = e.target.value.replace(".", ",");
+                  setPrice(formattedPrice);
+                }}
               />
             </div>
           </div>

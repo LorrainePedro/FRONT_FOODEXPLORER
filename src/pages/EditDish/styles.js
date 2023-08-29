@@ -31,7 +31,8 @@ export const Content = styled.div`
 
     h2 {
       font-family: "Poppins";
-      font-weight: 300;
+      font-style: normal;
+      font-weight: 500;
       font-size: 1.6rem;
       line-height: 140%;
     }
@@ -60,11 +61,16 @@ export const Content = styled.div`
   }
 
   @media (min-width: 1024px) {
+    a {
+      > h2 {
+        font-weight: bold;
+        font-size: 2.4rem;
+      }
+    }
+
     .ingredientsRow {
       display: flex;
-
       justify-content: space-between;
-      /* gap: 3.2rem; */
 
       .addTags {
         width: 83rem;
@@ -82,7 +88,6 @@ export const Content = styled.div`
 
 export const Form = styled.div`
   width: 36.4rem;
-  /* height: 100vh; */
 
   @media (min-width: 1024px) {
     width: 112rem;
@@ -203,9 +208,9 @@ export const Description = styled.div`
 
     .addButton,
     .delButton {
-      // font-family: "Poppins", serif;
-      font-size: 1.4rem;
-      font-weight: 100;
+      font-family: "Poppins", serif;
+      font-size: 1.6rem;
+      font-weight: 300;
       line-height: 2.4rem;
       padding: 2.4rem 1.2rem;
 

@@ -141,6 +141,9 @@ export const Section = styled.div`
 
   @media (min-width: 1024px) {
     width: 112rem;
+    .hidden {
+      display: none;
+    }
 
     .scrollLeft,
     .scrollRight {
@@ -151,14 +154,17 @@ export const Section = styled.div`
       font-size: 5rem;
       font-weight: 100;
       color: white;
+      height: 30rem;
+      width: 4.5rem;
+      transition: box-shadow 0.2s ease;
       cursor: pointer;
-      height: 46rem;
-      width: 5rem;
-      transition: box-shadow 0.3s ease;
+
+      margin-top: 8rem;
     }
     .scrollLeft:hover,
     .scrollRight:hover {
-      box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 2px 2px whitesmoke;
+      border-radius: 0.5rem;
     }
 
     .scrollLeft {

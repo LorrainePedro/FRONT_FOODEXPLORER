@@ -55,3 +55,5 @@ export const Content = styled.div`
   li {
   }
 `;
+
+export const Logout = styled.div``;

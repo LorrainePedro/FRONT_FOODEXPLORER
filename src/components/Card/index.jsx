@@ -32,13 +32,13 @@ export function Card({ dish }) {
         )}
         <Link to={`/details/${dish.id}`}>
           <img src={imageURL} alt={`Imagem do prato ${dish.title}`} />
-        </Link>
 
-        <div className="dishTitle">
-          <h1>{dish.title} &gt;</h1>
-          <p> {dish.description}</p>
-          <span>R$ {dish.price}</span>
-        </div>
+          <div className="dishTitle">
+            <h1>{dish.title} &gt;</h1>
+            <p> {dish.description}</p>
+            <span>R$ {dish.price}</span>
+          </div>
+        </Link>
 
         {!isAdmin && (
           <div className="bottomRow">

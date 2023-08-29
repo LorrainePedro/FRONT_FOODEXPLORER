@@ -126,9 +126,10 @@ export function EditDish() {
         <div className="back">
           <Link to={`/details/${params.id}`}>
             <MdOutlineArrowBackIos size={22} />
-            <h2>Voltar</h2>
+            <h2>voltar</h2>
           </Link>
         </div>
+
         <h1>Editar prato</h1>
 
         <Form encType="multipart/form-data">

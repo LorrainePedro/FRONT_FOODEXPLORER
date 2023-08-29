@@ -9,15 +9,16 @@ import {
 import { HeaderAdm } from "../../components/HeaderAdm";
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
-import { ButtonText } from "../../components/ButtonText";
+
 import { Footer } from "../../components/Footer";
 import { Tags } from "../../components/Tags";
-import { FiChevronLeft, FiChevronRight, FiPlus, FiMinus } from "react-icons/fi";
+import { FiPlus, FiMinus } from "react-icons/fi";
+import { MdOutlineArrowBackIos } from "react-icons/md";
 
 import React from "react";
 import { useState, useEffect } from "react";
 
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom"; //useNavigate,
 import { api } from "../../services/api";
 import { useAuth } from "../../hooks/auth";
 
@@ -29,7 +30,7 @@ export function Details() {
   const [search, setSearch] = useState("");
 
   const params = useParams();
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const imageURL = data && `${api.defaults.baseURL}/files/${data.image}`;
 
@@ -60,10 +61,12 @@ export function Details() {
       )}
       {data && (
         <Content>
-          <button className="backButton" onClick={() => navigate(-1)}>
-            <FiChevronLeft size={38} />
-            <h2>voltar</h2>
-          </button>
+          <div className="back">
+            <Link to="/">
+              <MdOutlineArrowBackIos size={22} />
+              <h2>voltar</h2>
+            </Link>
+          </div>
 
           <div className="main">
             <Image>
@@ -93,7 +96,7 @@ export function Details() {
 
                 {isAdmin ? (
                   <Link to={`/edit/${params.id}`}>
-                    <Button title="Editar prato" />
+                    <Button className="editDish" title="Editar prato" />
                   </Link>
                 ) : (
                   <Button title="Incluir - R$25,00" />

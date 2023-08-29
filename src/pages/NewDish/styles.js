@@ -31,7 +31,8 @@ export const Content = styled.div`
 
     h2 {
       font-family: "Poppins";
-      font-weight: 300;
+      font-style: normal;
+      font-weight: 500;
       font-size: 1.6rem;
       line-height: 140%;
     }
@@ -60,11 +61,17 @@ export const Content = styled.div`
   }
 
   @media (min-width: 1024px) {
+    a {
+      > h2 {
+        font-weight: bold;
+        font-size: 2.4rem;
+      }
+    }
+
     .ingredientsRow {
       display: flex;
 
       justify-content: space-between;
-      /* gap: 3.2rem; */
 
       .addTags {
         width: 83rem;

@@ -13,40 +13,45 @@ export const Container = styled.div`
 `;
 export const Content = styled.div`
   margin: 0 auto;
-  margin-top: 3.6rem;
+  margin-top: 3.2rem;
 
   width: 32rem;
   height: 68rem;
-  border: 1px solid red;
 
-  > .backButton {
+  a {
     color: ${({ theme }) => theme.COLORS.GRAY};
-    line-height: 140%;
-    background-color: transparent;
     display: flex;
     align-items: center;
-    border: 1px solid blue;
-    margin-bottom: 1.6rem;
-    //margin-top: 2.6rem;
+    gap: 0.5rem;
+
+    h2 {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 140%;
+    }
   }
 
   @media (min-width: 1024px) {
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
     width: 113rem;
-
-    //height: 47rem;
 
     gap: 4.7rem;
 
     .main {
       display: flex;
-
       gap: 4.7rem;
       align-items: center;
-      align-content: center;
       align-self: center;
+    }
+
+    a {
+      > h2 {
+        font-weight: bold;
+        font-size: 2.4rem;
+      }
     }
   }
 `;
@@ -55,7 +60,6 @@ export const Image = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 1.6rem;
-  //align-content: center;
 
   img {
     width: 26.4rem;
@@ -65,10 +69,6 @@ export const Image = styled.div`
     img {
       width: 39rem;
     }
-
-    /* .backButton {
-      margin-bottom: 4.2rem;
-    } */
   }
 `;
 
@@ -90,7 +90,6 @@ export const Description = styled.div`
   }
 
   @media (min-width: 1024px) {
-    border: 1px solid green;
     width: 69rem;
     height: 30rem;
 
@@ -112,8 +111,6 @@ export const IngredientTags = styled.div`
   display: grid;
   justify-items: center;
   margin-top: 2.4rem;
-  // padding-right: 2.5rem;
-  //padding-left: 2.5rem;
 
   grid-template-columns: 1fr 1fr 1fr;
   row-gap: 2.4rem;
@@ -133,8 +130,6 @@ export const BottomRow = styled.div`
     gap: 1.6rem;
     margin-right: 2rem;
 
-    //
-
     > p {
       font-family: "Roboto", sans-serif;
       font-weight: bold;
@@ -143,7 +138,7 @@ export const BottomRow = styled.div`
     }
   }
 
-  button {
+  .editDish {
     background-color: #750310;
     width: 31.6rem;
     height: 3.8rem;
@@ -154,15 +149,26 @@ export const BottomRow = styled.div`
 
   @media (min-width: 1024px) {
     margin-top: -0.1rem;
-    button {
+
+    .editDish {
       position: relative;
       top: 1rem;
-      min-width: 16.2rem;
+      width: 13.1rem;
+      height: 4.8rem;
+
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 2.4rem;
+    }
+
+    /* position: relative;
+      top: 1rem;
+      width: 16.2rem;
       font-size: 1.4rem;
       line-height: 2.4rem;
       font-weight: 100;
       padding: 2rem 2.4rem;
-    }
+    } */
 
     .amount {
       margin-top: 1.5rem;

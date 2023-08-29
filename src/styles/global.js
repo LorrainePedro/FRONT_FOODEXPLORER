@@ -5,10 +5,11 @@ export default createGlobalStyle`
     margin: 0;
     padding:0;
     box-sizing: border-box;
-  
+
   }
 
   :root {
+    
     font-size: 62.5%;
   }
   
@@ -17,7 +18,8 @@ export default createGlobalStyle`
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND};
     color: ${({ theme }) => theme.COLORS.WHITE};
     -webkit-font-smoothing: antialiased;
- 
+
+
   }
 
   body, input, button, textarea{

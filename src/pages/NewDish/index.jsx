@@ -68,6 +68,10 @@ export function NewDish() {
       return alert("Faltou fazer o upload da imagem desejada");
     }
 
+    if (newIngredient) {
+      return alert("Ficou um ingrediente no campo por adicionar");
+    }
+
     if (ingredients.length < 2) {
       return alert("Você precisa adicionar ao menos dois ingredientes.");
     }

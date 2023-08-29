@@ -1,7 +1,6 @@
-import { Container, Content } from "./styles";
+import { Container, Content, Logout } from "./styles";
 import { Input } from "../../components/Input";
 import { Footer } from "../../components/Footer";
-import { ButtonText } from "../../components/ButtonText";
 import { FiSearch } from "react-icons/fi";
 import { PiX } from "react-icons/pi";
 
@@ -46,7 +45,9 @@ export function Menu() {
             </li>
 
             <li className="back">
-              <ButtonText onClick={handleSignOut} title="Sair" />
+              <Logout onClick={handleSignOut}>
+                <span>Sair</span>
+              </Logout>
             </li>
           </ul>
         </div>

@@ -9,7 +9,7 @@ import { api } from "../../services/api";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useAuth } from "../../hooks/auth";
-import React, { useRef } from "react";
+import { React, useRef } from "react";
 
 export function Home() {
   const { user } = useAuth();

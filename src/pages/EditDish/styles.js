@@ -176,11 +176,21 @@ export const IngredientsTags = styled.div`
 
   .addTags {
     background: ${({ theme }) => theme.COLORS.INPUT};
+    min-height: 4.8rem;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 0.8rem;
-    padding: 1rem;
-    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+
+    ${({ showTagsInTwoLines }) =>
+      showTagsInTwoLines &&
+      css`
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 0;
+      `}
   }
 `;
 

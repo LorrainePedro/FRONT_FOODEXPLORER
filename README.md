@@ -33,7 +33,7 @@ Acesse a porta `http://localhost:3333`
 `Deploy do projeto back-end pelo render: xxxxxxxxxxxxxxxxxxxx`
 <br>
 
-`Deploy do projeto front-end pelo netlify: rocketfoodlorraine.netlify.app`
+`Deploy do projeto front-end pelo netlify: xxxxxxxxxxxx`
 
 Para ter acesso ao login de administrador e ter poderes de adicionar, atualizar e deletar pratos, utilize:
 `login: admin`

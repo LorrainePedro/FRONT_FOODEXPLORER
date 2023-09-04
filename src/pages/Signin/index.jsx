@@ -52,7 +52,7 @@ export function SignIn() {
           />
 
           <Register>
-            <Link to="/users">Criar uma conta</Link>
+            <Link to="/register">Criar uma conta</Link>
           </Register>
         </Form>
       </Content>

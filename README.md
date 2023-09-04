@@ -5,11 +5,11 @@ Projeto de um cardápio digital direcionado para ser usado por restaurantes com 
 ## 🚀 Começando
 
 Clone o Front-End do meu repositório:
-`xxxxxxxxxxxxxxxxxxxxx`
+`https://github.com/LorrainePedro/FRONT_FOODEXPLORER.git`
 <br>
 Clone o Back-End do meu repositório:<br>
 
-`https://rocketfoods-api.onrender.com`
+`https://github.com/LorrainePedro/BACKEND_FOODEXPLORER.git`
 
 ### 📋 Pré-requisitos
 
@@ -30,10 +30,10 @@ Para executar o projeto em ambiente de desenvolvimento
 
 Acesse a porta `http://localhost:3333`
 
-`Deploy do projeto back-end pelo render: xxxxxxxxxxxxxxxxxxxx`
+`Deploy do projeto back-end pelo render: https://rocketfoods-api.onrender.com`
 <br>
 
-`Deploy do projeto front-end pelo netlify: xxxxxxxxxxxx`
+`Deploy do projeto front-end pelo netlify: https://heartfelt-kelpie-3c01d7.netlify.app`
 
 Para ter acesso ao login de administrador e ter poderes de adicionar, atualizar e deletar pratos, utilize:
 `login: admin`
@@ -59,4 +59,4 @@ Para ter acesso ao login de administrador e ter poderes de adicionar, atualizar 
 
 # FRONT_FOODEXPLORER
 
-![fotofinal](https://github.com/LorrainePedro/FRONT_FOODEXPLORER/assets/139295395/70ab0557-6b6e-40d2-9224-ebaaac5e78a6)
+![Food Explorer Logo](./src/assets/1.png)

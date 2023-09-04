@@ -26,15 +26,16 @@ export function HeaderAdm({ handleSearch }) {
         </Link>
       </div>
 
-      <Logo>
-        <div className="logoAndName">
-          <img src={logo} alt="Logo azul do food explorer" />
+      <Link to="/">
+        <Logo>
+          <div className="logoAndName">
+            <img src={logo} alt="Logo azul do food explorer" />
 
-          <h1>food explorer</h1>
-          <span>admin</span>
-        </div>
-      </Logo>
-
+            <h1>food explorer</h1>
+            <span>admin</span>
+          </div>
+        </Logo>
+      </Link>
       <div className="searchInput">
         <Input
           placeholder="Busque por pratos ou ingredientes"
@@ -46,7 +47,7 @@ export function HeaderAdm({ handleSearch }) {
         <Button className="newDish" title="Novo prato" />
       </Link>
       <Logout onClick={handleSignOut}>
-        <FiLogOut size={32} />
+        <FiLogOut size={32} className="logoutIcon" />{" "}
       </Logout>
     </Container>
   );

@@ -23,7 +23,7 @@ export function Menu() {
       <Content>
         <div className="headerMenu">
           <Link to="/">
-            <PiX size={25} />
+            <PiX size={25} className="pixIcon" />
           </Link>
           <p>Menu</p>
         </div>

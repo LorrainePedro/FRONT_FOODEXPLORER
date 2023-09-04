@@ -26,11 +26,12 @@ export function Header({ handleSearch }) {
         </Link>
       </div>
 
-      <Logo>
-        <img src={logo} alt="Logo azul do food explorer" />
-
-        <h1>food explorer</h1>
-      </Logo>
+      <Link to="/">
+        <Logo>
+          <img src={logo} alt="Logo azul do food explorer" />
+          <h1>food explorer</h1>
+        </Logo>
+      </Link>
 
       <div className="searchInput">
         <Input
@@ -43,7 +44,7 @@ export function Header({ handleSearch }) {
       <Button className="deskOrder" title="Pedidos(0)" icon={PiReceipt} />
 
       <Logout onClick={handleSignOut}>
-        <FiLogOut size={32} />
+        <FiLogOut size={32} className="logoutIcon" />{" "}
       </Logout>
     </Container>
   );

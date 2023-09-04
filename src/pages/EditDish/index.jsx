@@ -124,9 +124,8 @@ export function EditDish() {
       <HeaderAdm />
       <Content>
         <div className="back">
-          <Link to={`/details/${params.id}`}>
-            <MdOutlineArrowBackIos size={22} />
-            <h2>voltar</h2>
+          <Link to="/">
+            <MdOutlineArrowBackIos size={22} className="icon" /> <h2>voltar</h2>
           </Link>
         </div>
 

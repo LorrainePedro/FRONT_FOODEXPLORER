@@ -11,11 +11,22 @@ export const Container = styled.header`
   justify-content: center;
 
   gap: 8.1rem;
-  padding: 5.6rem 2.8rem 2.4rem;
+  padding: 5.7rem 2.8rem 2.4rem;
 
   .menu {
+    width: 2.4rem;
+    height: 2.4rem;
+    display: inline-block;
+
     svg {
       font-size: 2.4rem;
+      transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        transform: rotate(180deg);
+        font-size: 2.7rem;
+        color: ${({ theme }) => theme.COLORS.BLUE};
+      }
     }
   }
 
@@ -56,6 +67,10 @@ export const Logo = styled.div`
 
     img {
       width: 2.3rem;
+      transition: transform 0.3s;
+    }
+    img:hover {
+      transform: rotate(360deg);
     }
 
     h1 {
@@ -87,6 +102,14 @@ export const Logo = styled.div`
 `;
 
 export const Logout = styled.div`
+  .logoutIcon {
+    transition: transform 0.3s ease;
+  }
+
+  .logoutIcon:hover {
+    transform: translateX(1rem);
+  }
+
   @media (max-width: 1024px) {
     display: none;
   }

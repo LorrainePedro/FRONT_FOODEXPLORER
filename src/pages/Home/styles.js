@@ -18,9 +18,17 @@ export const Container = styled.div`
       font-size: 1.8rem;
       font-weight: 300;
       line-height: 140%;
-
       margin-left: 2.5rem;
       margin-bottom: 1.6rem;
+      text-transform: capitalize;
+      user-select: none;
+      transition: color 0.8s ease;
+
+      width: 21rem;
+    }
+
+    h2:hover {
+      color: ${({ theme }) => theme.COLORS.BLUE};
     }
 
     @media (min-width: 1024px) {
@@ -50,11 +58,16 @@ export const MainImg = styled.div`
   display: flex;
   align-items: center;
   border-radius: 0.3rem;
-  margin: 0 auto;
+  margin-left: 3rem;
   margin-top: 4.4rem;
+  margin-bottom: 1.5rem;
 
   height: 12rem;
-  width: 100%;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateX(1rem);
+  }
 
   @media (min-width: 428px) {
     width: 37.6rem;
@@ -62,7 +75,10 @@ export const MainImg = styled.div`
 
   @media (min-width: 600px) {
     margin-left: 5rem;
-    width: 100%;
+    width: 40rem;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   > img {

@@ -9,7 +9,6 @@ export default createGlobalStyle`
   }
 
   :root {
-    
     font-size: 62.5%;
   }
   
@@ -19,7 +18,9 @@ export default createGlobalStyle`
     color: ${({ theme }) => theme.COLORS.WHITE};
     -webkit-font-smoothing: antialiased;
 
-
+::selection{
+  background-color: #4B0082;
+}
   }
 
   body, input, button, textarea{
@@ -30,8 +31,7 @@ export default createGlobalStyle`
 
   a{
     color: ${({ theme }) => theme.COLORS.WHITE};
-    text-decoration: none;
-    
+    text-decoration: none;  
   }
 
   button, a {

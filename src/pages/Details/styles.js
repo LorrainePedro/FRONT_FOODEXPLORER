@@ -18,18 +18,27 @@ export const Content = styled.div`
   width: 32rem;
   height: 68rem;
 
-  a {
-    color: ${({ theme }) => theme.COLORS.GRAY};
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  .back {
+    a {
+      color: ${({ theme }) => theme.COLORS.GRAY};
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
 
-    h2 {
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 1.6rem;
-      line-height: 140%;
+      h2 {
+        font-family: "Poppins";
+        font-weight: bold;
+        font-size: 2.4rem;
+        line-height: 140%;
+      }
+    }
+  }
+
+  .icon {
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateX(1rem);
     }
   }
 
@@ -122,7 +131,8 @@ export const IngredientTags = styled.div`
 `;
 export const BottomRow = styled.div`
   display: flex;
-  margin-top: 4rem;
+  align-items: center;
+  margin-top: 3rem;
 
   .amount {
     display: flex;
@@ -138,17 +148,46 @@ export const BottomRow = styled.div`
     }
   }
 
+  .editDish,
+  .orderBtn {
+    border: none;
+
+    border-radius: 0.3rem;
+    color: ${({ theme }) => theme.COLORS.WHITE};
+  }
+
+  .orderBtn {
+    background-color: #92000e;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 2rem 3.5rem;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    width: 18.8rem;
+    height: 3.8rem;
+
+    span {
+      display: block;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.6rem;
+    }
+  }
+
   .editDish {
-    background-color: #750310;
     width: 31.6rem;
     height: 3.8rem;
     font-size: 1.4rem;
-    border-radius: 0.5rem;
     padding: 2.4rem 1.2rem;
   }
 
   @media (min-width: 1024px) {
-    margin-top: -0.1rem;
+    margin-top: 2rem;
 
     .editDish {
       position: relative;
@@ -161,17 +200,19 @@ export const BottomRow = styled.div`
       line-height: 2.4rem;
     }
 
-    /* position: relative;
-      top: 1rem;
-      width: 16.2rem;
-      font-size: 1.4rem;
-      line-height: 2.4rem;
-      font-weight: 100;
-      padding: 2rem 2.4rem;
-    } */
+    .orderBtn {
+      background-color: #750310;
+      span {
+        display: none;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
 
     .amount {
-      margin-top: 1.5rem;
+      margin-top: 0.2rem;
     }
   }
 `;

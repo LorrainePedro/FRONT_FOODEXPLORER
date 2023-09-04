@@ -16,6 +16,7 @@ export const Container = styled.div`
 
     width: 2.4rem;
     height: 2.2rem;
+    transition: transform 0.5s ease;
 
     @media (min-width: 1024px) {
       bottom: 19rem;
@@ -23,19 +24,29 @@ export const Container = styled.div`
     }
   }
 
+  .favoriteSvg:hover,
+  .pencilSvg:hover {
+    transform: scale(1.5);
+  }
+
   svg:hover path {
     color: ${({ theme }) => theme.COLORS.RED};
-    transition: 0.8s;
+    transition: color 0.8s ease;
   }
 
   img {
     margin-left: 1.2rem;
     width: 8.8rem;
+    height: 8.8rem;
     margin-bottom: 0.8rem;
     margin-top: 2rem;
+    border-radius: 50%;
 
     @media (min-width: 1024px) {
       margin-right: 4rem;
+      width: 17.6rem;
+      height: 17.6rem;
+      border-radius: 50%;
     }
   }
 

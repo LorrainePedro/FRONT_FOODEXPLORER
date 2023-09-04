@@ -27,7 +27,7 @@ export function NewDish() {
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
-  const [category, setCategory] = useState(null);
+  const [category, setCategory] = useState("refeicoes");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [ingredients, setIngredients] = useState([]);
@@ -41,10 +41,19 @@ export function NewDish() {
   }
 
   function handleAddIngredient() {
+    if (newIngredient.length < 3) {
+      alert("O nome do ingrediente deve ter pelo menos 3 letras.");
+      return;
+    }
+
+    if (ingredients.includes(newIngredient)) {
+      alert("Este ingrediente já foi adicionado.");
+      return;
+    }
+
     setIngredients((prevState) => [...prevState, newIngredient]);
     setNewIngredient("");
   }
-
   function handleRemoveIngredient(deleted) {
     setIngredients((prevState) =>
       prevState.filter((ingredient) => ingredient !== deleted)
@@ -117,8 +126,7 @@ export function NewDish() {
       <Content>
         <div className="back">
           <Link to="/">
-            <MdOutlineArrowBackIos size={22} />
-            <h2>Voltar</h2>
+            <MdOutlineArrowBackIos size={22} className="icon" /> <h2>voltar</h2>
           </Link>
         </div>
         <h1>Adicionar prato</h1>
@@ -128,7 +136,7 @@ export function NewDish() {
             <div className="imgNew">
               <span>Imagem do prato</span>
               <ImageUpload>
-                <MdOutlineFileUpload size={24} />
+                <MdOutlineFileUpload size={32} />
                 <h2>Selecione a imagem</h2>
                 <input
                   type="file"

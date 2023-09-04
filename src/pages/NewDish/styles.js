@@ -23,18 +23,26 @@ export const Content = styled.div`
     font-size: 1.6rem;
   }
 
-  a {
-    color: ${({ theme }) => theme.COLORS.GRAY};
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  .back {
+    a {
+      color: ${({ theme }) => theme.COLORS.GRAY};
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
 
-    h2 {
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 1.6rem;
-      line-height: 140%;
+      h2 {
+        font-family: "Poppins";
+        font-weight: bold;
+        font-size: 2.4rem;
+        line-height: 140%;
+      }
+    }
+  }
+  .icon {
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateX(1rem);
     }
   }
 
@@ -106,7 +114,7 @@ export const InputWrapper = styled.div`
   }
 
   select {
-    background: ${({ theme }) => theme.COLORS.INPUTSELECT};
+    background: ${({ theme }) => theme.COLORS.INPUT};
     color: ${({ theme }) => theme.COLORS.WHITE};
 
     height: 4.8rem;
@@ -140,6 +148,16 @@ export const ImageUpload = styled.div`
   border-radius: 0.5rem;
   background: ${({ theme }) => theme.COLORS.INPUT};
 
+  h2 {
+    color: ${({ theme }) => theme.COLORS.WHITE};
+    font-family: "Poppins";
+    font-size: 1.4rem;
+    font-weight: 100;
+    font-weight: 500;
+    line-height: 2.4rem;
+    padding: 0.5rem;
+  }
+
   .addFile {
     height: 4.8rem;
     position: absolute;
@@ -151,15 +169,6 @@ export const ImageUpload = styled.div`
       width: 22.5rem;
       margin-left: -2rem;
     }
-  }
-
-  h2 {
-    color: ${({ theme }) => theme.COLORS.LABELS};
-    font-family: "Poppins", serif;
-    font-size: 1.4rem;
-    font-weight: 100;
-    line-height: 2.4rem;
-    padding: 0.5rem;
   }
 `;
 
@@ -204,7 +213,7 @@ export const Description = styled.div`
       background: ${({ theme }) => theme.COLORS.TOMATOBUTTON};
       font-family: "Poppins", serif;
       font-size: 1.4rem;
-      font-weight: 100;
+      font-weight: 400;
       line-height: 2.4rem;
     }
 

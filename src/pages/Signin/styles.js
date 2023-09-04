@@ -55,6 +55,16 @@ export const Brand = styled.div`
     font-size: 3.7rem;
     font-weight: bold;
   }
+
+  img:hover {
+    transform: rotate(360deg);
+    transition: transform 0.5s ease;
+  }
+
+  h1:hover {
+    transform: translateX(1rem);
+    transition: transform 0.5s ease;
+  }
 `;
 
 export const Form = styled.form`

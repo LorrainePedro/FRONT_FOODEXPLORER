@@ -14,6 +14,7 @@ import { Footer } from "../../components/Footer";
 import { Tags } from "../../components/Tags";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { MdOutlineArrowBackIos } from "react-icons/md";
+import { PiReceipt } from "react-icons/pi";
 
 import React from "react";
 import { useState, useEffect } from "react";
@@ -30,7 +31,6 @@ export function Details() {
   const [search, setSearch] = useState("");
 
   const params = useParams();
-  //const navigate = useNavigate();
 
   const imageURL = data && `${api.defaults.baseURL}/files/${data.image}`;
 
@@ -56,14 +56,14 @@ export function Details() {
         </>
       ) : (
         <>
-          <Header handleSearch={handleSearch}></Header>
+          <Header handleSearch={handleSearch} />
         </>
       )}
       {data && (
         <Content>
           <div className="back">
             <Link to="/">
-              <MdOutlineArrowBackIos size={22} />
+              <MdOutlineArrowBackIos size={22} className="icon" />{" "}
               <h2>voltar</h2>
             </Link>
           </div>
@@ -99,7 +99,12 @@ export function Details() {
                     <Button className="editDish" title="Editar prato" />
                   </Link>
                 ) : (
-                  <Button title="Incluir - R$25,00" />
+                  <button className="orderBtn">
+                    <span className="icon">
+                      <PiReceipt size={24} />
+                    </span>{" "}
+                    <h2>incluir ∙ R$ {data.price}</h2>
+                  </button>
                 )}
               </BottomRow>
             </Description>

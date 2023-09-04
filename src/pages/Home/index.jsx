@@ -68,7 +68,7 @@ export function Home() {
         </>
       ) : (
         <>
-          <Header handleSearch={handleSearch}></Header>
+          <Header handleSearch={handleSearch} />
         </>
       )}
 
@@ -82,7 +82,7 @@ export function Home() {
         </MainImg>
 
         <div className="sections">
-          <h2>Refeições</h2>
+          <h2>refeições</h2>
           <Section>
             <button
               className="scrollLeft"
@@ -103,7 +103,7 @@ export function Home() {
             </button>
           </Section>
 
-          <h2>Sobremesas</h2>
+          <h2>sobremesas</h2>
           <Section>
             <button
               className="scrollLeft"
@@ -124,7 +124,7 @@ export function Home() {
             </button>
           </Section>
 
-          <h2>Bebidas</h2>
+          <h2>bebidas</h2>
           <Section>
             <button
               className="scrollLeft"

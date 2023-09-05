@@ -215,7 +215,6 @@ export const Description = styled.div`
 
   .buttonRow {
     display: flex;
-    // flex-direction: row;
     gap: 3.2rem;
 
     .addButton {

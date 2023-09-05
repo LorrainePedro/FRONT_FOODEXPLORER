@@ -16,7 +16,7 @@ export const Container = styled.footer`
 
   span {
     font-family: "DM Sans";
-    color: #fffaf1;
+    color: ${({ theme }) => theme.COLORS.WHITE};
     font-size: 1.2rem;
     font-weight: 500;
   }

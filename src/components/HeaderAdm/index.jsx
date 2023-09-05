@@ -1,17 +1,19 @@
 import { Container, Logo, Logout } from "./styles";
 
 import logo from "../../assets/logo.svg";
-import { Input } from "../../components/Input";
 import { Button } from "../Button";
-
+import { Menu } from "../Menu";
+import { InputSearch } from "../InputSearch";
 import { FiMenu, FiLogOut, FiSearch } from "react-icons/fi";
 
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
+import { useState } from "react";
 
 export function HeaderAdm({ handleSearch }) {
-  const { signOut } = useAuth();
   const navigate = useNavigate();
+  const { signOut } = useAuth();
+  const [menuIsVisible, setMenuIsVisible] = useState(false);
 
   function handleSignOut() {
     navigate("/");
@@ -20,10 +22,17 @@ export function HeaderAdm({ handleSearch }) {
 
   return (
     <Container>
-      <div className="menu">
-        <Link to="/menu">
-          <FiMenu />
-        </Link>
+      <div className="menuOn">
+        <Menu
+          menuIsVisible={menuIsVisible}
+          setMenuIsVisible={setMenuIsVisible}
+        />
+
+        <FiMenu
+          className="menuIcon"
+          size={25}
+          onClick={() => setMenuIsVisible(!menuIsVisible)}
+        />
       </div>
 
       <Link to="/">
@@ -37,12 +46,13 @@ export function HeaderAdm({ handleSearch }) {
         </Logo>
       </Link>
       <div className="searchInput">
-        <Input
+        <InputSearch
           placeholder="Busque por pratos ou ingredientes"
           icon={FiSearch}
           onChange={handleSearch}
         />
       </div>
+
       <Link to="/new">
         <Button className="newDish" title="Novo prato" />
       </Link>

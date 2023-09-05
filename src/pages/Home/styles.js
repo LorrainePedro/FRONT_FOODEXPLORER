@@ -173,7 +173,6 @@ export const Section = styled.div`
       height: 30rem;
       width: 4.5rem;
       transition: box-shadow 0.2s ease;
-      cursor: pointer;
 
       margin-top: 8rem;
     }

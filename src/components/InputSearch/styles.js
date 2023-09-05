@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background: ${({ theme }) => theme.COLORS.INPUT};
+  background: #0d1d25;
   color: ${({ theme }) => theme.COLORS.WHITE};
   width: 100%;
   display: flex;

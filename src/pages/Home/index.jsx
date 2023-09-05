@@ -1,12 +1,11 @@
 import { Container, Main, MainImg, Section } from "./styles";
 import mainImage from "../../assets/principal.png";
 import { Footer } from "../../components/Footer";
-import { Card } from "../../components/Card";
 import { Header } from "../../components/Header";
 import { HeaderAdm } from "../../components/HeaderAdm";
 import { DishList } from "../../components/DishList";
 import { api } from "../../services/api";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useAuth } from "../../hooks/auth";
 import { React, useRef } from "react";

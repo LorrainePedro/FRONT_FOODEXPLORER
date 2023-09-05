@@ -157,7 +157,7 @@ export const BottomRow = styled.div`
   }
 
   .orderBtn {
-    background-color: #92000e;
+    background: #92000e;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -201,7 +201,7 @@ export const BottomRow = styled.div`
     }
 
     .orderBtn {
-      background-color: #750310;
+      background: #750310;
       span {
         display: none;
       }

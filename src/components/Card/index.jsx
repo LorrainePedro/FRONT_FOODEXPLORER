@@ -1,19 +1,33 @@
 import { Container } from "./styles";
 
 import { Button } from "../../components/Button";
-
-import { FiPlus, FiMinus, FiChevronRight } from "react-icons/fi";
+import { FiPlus, FiMinus } from "react-icons/fi";
 import { BiHeart, BiSolidPencil } from "react-icons/bi";
 import { useAuth } from "../../hooks/auth";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { api } from "../../services/api";
 
 export function Card({ dish }) {
   const { user } = useAuth();
   const isAdmin = user.isAdmin === 1;
   const imageURL = `${api.defaults.baseURL}/files/${dish.image}`;
-  console.log(imageURL);
+  // console.log(imageURL);
+
+  const handleFavoriteClick = () => {
+    alert("Funcionalidade passando por manutenção");
+  };
+
+  const handleMinusClick = () => {
+    alert("Ainda não há um prato incluso");
+  };
+
+  const handlePlusClick = () => {
+    alert("Funcionalidade passando por manutenção");
+  };
+
+  const handleBtnClick = () => {
+    alert("Funcionalidade passando por manutenção");
+  };
 
   return (
     <Container>
@@ -27,7 +41,7 @@ export function Card({ dish }) {
           </>
         ) : (
           <>
-            <BiHeart className="favoriteSvg" />
+            <BiHeart className="favoriteSvg" onClick={handleFavoriteClick} />
           </>
         )}
         <Link to={`/details/${dish.id}`}>
@@ -43,11 +57,11 @@ export function Card({ dish }) {
         {!isAdmin && (
           <div className="bottomRow">
             <div className="amount">
-              <FiMinus size={27} />
+              <FiMinus size={27} onClick={handleMinusClick} />
               <p>01</p>
-              <FiPlus size={27} />
+              <FiPlus size={27} onClick={handlePlusClick} />
             </div>
-            <Button className="Btn" title="Incluir" />
+            <Button className="Btn" title="Incluir" onClick={handleBtnClick} />
           </div>
         )}
       </div>

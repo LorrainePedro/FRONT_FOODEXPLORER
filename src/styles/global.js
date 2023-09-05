@@ -17,11 +17,19 @@ export default createGlobalStyle`
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND};
     color: ${({ theme }) => theme.COLORS.WHITE};
     -webkit-font-smoothing: antialiased;
-
-::selection{
-  background-color: #4B0082;
-}
+    cursor: pointer;
   }
+
+  ::-webkit-scrollbar {
+  width: 0;
+  height: 0;}
+
+  scrollbar-width: none;
+
+  ::selection{
+  background-color: #4B0082;}
+
+  
 
   body, input, button, textarea{
     font-family: 'Roboto', sans-serif;
@@ -35,7 +43,6 @@ export default createGlobalStyle`
   }
 
   button, a {
-    cursor: pointer;
     transition: filter 0.2s;
   }
 

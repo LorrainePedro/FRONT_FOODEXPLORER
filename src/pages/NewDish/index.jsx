@@ -114,10 +114,6 @@ export function NewDish() {
           );
         }
       });
-
-    useEffect(() => {
-      setShowTagsInTwoLines(ingredients.length >= 3);
-    }, [ingredients]);
   }
 
   return (
@@ -165,7 +161,7 @@ export function NewDish() {
           </InputWrapper>
 
           <div className="ingredientsRow">
-            <IngredientsTags showTagsInTwoLines={showTagsInTwoLines}>
+            <IngredientsTags>
               <span>Ingredientes</span>
               <div className="addTags">
                 {ingredients.map((ingredient, index) => (

@@ -2,11 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   border: 1px solid ${({ theme }) => theme.COLORS.BORDER};
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUNDCARD};
+  background: ${({ theme }) => theme.COLORS.BACKGROUNDCARD};
   width: 21rem;
   height: 29rem;
   padding: 2.4rem;
-  cursor: pointer;
 
   .favoriteSvg,
   .pencilSvg {

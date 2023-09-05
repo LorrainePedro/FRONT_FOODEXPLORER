@@ -3,30 +3,29 @@ import styled from "styled-components";
 export const Container = styled.footer`
   grid-area: footer;
 
-  background-color: ${({ theme }) => theme.COLORS.HEADERFOOTER};
+  background: ${({ theme }) => theme.COLORS.HEADERFOOTER};
   width: 100%;
-  height: 7.7rem;
-
+  position: fixed;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-left: 2.8rem;
   padding-right: 2.8rem;
+  height: 7.7rem;
 
   span {
-    font-family: "DM Sans", sans-serif;
+    font-family: "DM Sans";
     color: #fffaf1;
     font-size: 1.2rem;
     font-weight: 500;
   }
 
   @media (min-width: 1024px) {
-    position: fixed;
-    bottom: 0;
     padding: 2.4rem 12rem;
 
     span {
-      font-family: "Roboto", sans-serif;
+      font-family: "Roboto";
       font-size: 1.4rem;
     }
   }

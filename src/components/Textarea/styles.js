@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.textarea`
   color: ${({ theme }) => theme.COLORS.INPUTCONTENT};
-  background-color: ${({ theme }) => theme.COLORS.INPUT};
+  background: ${({ theme }) => theme.COLORS.INPUT};
 
   line-height: 100%;
 

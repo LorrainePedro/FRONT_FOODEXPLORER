@@ -1,7 +1,8 @@
 import { Container, Logo, Logout } from "./styles";
 
 import logo from "../../assets/logo.svg";
-import { Input } from "../../components/Input";
+import { Menu } from "../Menu";
+import { InputSearch } from "../../components/InputSearch";
 import { Button } from "../Button";
 
 import { FiMenu, FiLogOut, FiSearch } from "react-icons/fi";
@@ -9,10 +10,12 @@ import { PiReceipt } from "react-icons/pi";
 
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
+import { useState } from "react";
 
 export function Header({ handleSearch }) {
   const { signOut } = useAuth();
   const navigate = useNavigate();
+  const [menuIsVisible, setMenuIsVisible] = useState(false);
 
   function handleSignOut() {
     navigate("/");
@@ -20,10 +23,17 @@ export function Header({ handleSearch }) {
   }
   return (
     <Container>
-      <div className="menu">
-        <Link to="/menu">
-          <FiMenu />
-        </Link>
+      <div className="menuOn">
+        <Menu
+          menuIsVisible={menuIsVisible}
+          setMenuIsVisible={setMenuIsVisible}
+        />
+
+        <FiMenu
+          className="menuIcon"
+          size={25}
+          onClick={() => setMenuIsVisible(!menuIsVisible)}
+        />
       </div>
 
       <Link to="/">
@@ -34,7 +44,7 @@ export function Header({ handleSearch }) {
       </Link>
 
       <div className="searchInput">
-        <Input
+        <InputSearch
           placeholder="Busque por pratos ou ingredientes"
           icon={FiSearch}
           onChange={handleSearch}

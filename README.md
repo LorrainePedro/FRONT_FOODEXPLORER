@@ -49,13 +49,13 @@ Para ter acesso ao login de administrador e ter poderes de adicionar, atualizar 
 
 ## ✒️ Autora
 
-[Lorraine Pedro](https://github.com/linkParaPerfil)
+[Lorraine Pedro](https://github.com/LorrainePedro)
 
 ## Referência e apoio
 
 [RocketSeat](https://www.rocketseat.com.br/)
 
-## Agradecimento aos colegas de turma que me apoiaram nessa reta final e dedicaram horas no discord para codar junto a mim em momentos de dificuldade.
+Agradecimento aos colegas de turma que me apoiaram nessa reta final e dedicaram horas no discord para codar junto a mim em momentos de dificuldade.
 
 # FRONT_FOODEXPLORER
 

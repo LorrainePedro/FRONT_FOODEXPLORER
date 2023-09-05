@@ -1,30 +1,26 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
-  background-color: ${({ theme }) => theme.COLORS.HEADERFOOTER};
+  background: ${({ theme }) => theme.COLORS.HEADERFOOTER};
   grid-area: header;
   width: 100%;
   display: flex;
   align-items: center;
-  align-content: center;
-  align-self: center;
-  justify-content: center;
+  justify-content: space-between;
 
-  gap: 8.1rem;
-  padding: 5.7rem 2.8rem 2.4rem;
+  gap: 3.2rem;
+  padding: 5.6rem 2.8rem 2.4rem;
 
-  .menu {
-    width: 2.4rem;
-    height: 2.4rem;
-    display: inline-block;
+  .menuOn {
+    width: 2.5rem;
+    height: 2.5rem;
 
-    svg {
-      font-size: 2.4rem;
-      transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+    .menuIcon {
+      transition: transform 0.3s ease, color 0.3s ease;
+      position: relative;
+      right: 0.2rem;
 
       &:hover {
-        transform: rotate(180deg);
-        font-size: 2.7rem;
         color: ${({ theme }) => theme.COLORS.BLUE};
       }
     }
@@ -39,7 +35,7 @@ export const Container = styled.header`
     justify-content: center;
     gap: 3.2rem;
 
-    .menu {
+    .menuOn {
       display: none;
     }
 
@@ -59,6 +55,7 @@ export const Container = styled.header`
     }
   }
 `;
+
 export const Logo = styled.div`
   .logoAndName {
     display: flex;

@@ -20,7 +20,7 @@ export const Content = styled.div`
 
     > Form {
       margin-top: 20rem;
-      background-color: ${({ theme }) => theme.COLORS.LOGIN};
+      background: ${({ theme }) => theme.COLORS.LOGIN};
       width: 47rem;
       height: 54rem;
       border-radius: 1.6rem;

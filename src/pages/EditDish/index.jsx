@@ -13,7 +13,6 @@ import { Footer } from "../../components/Footer";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { Textarea } from "../../components/Textarea";
-import { Tags } from "../../components/Tags";
 import { NewTag } from "../../components/NewTag";
 
 import { MdOutlineArrowBackIos, MdOutlineFileUpload } from "react-icons/md";
@@ -28,7 +27,7 @@ export function EditDish() {
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
-  const [category, setCategory] = useState(null);
+  const [category, setCategory] = useState("refeicoes");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [ingredients, setIngredients] = useState([]);

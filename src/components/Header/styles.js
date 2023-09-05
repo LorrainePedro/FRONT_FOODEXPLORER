@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
-  background-color: ${({ theme }) => theme.COLORS.HEADERFOOTER};
+  background: ${({ theme }) => theme.COLORS.HEADERFOOTER};
   grid-area: header;
-
   width: 100%;
   display: flex;
   align-items: center;
@@ -12,18 +11,16 @@ export const Container = styled.header`
   gap: 3.2rem;
   padding: 5.6rem 2.8rem 2.4rem;
 
-  .menu {
-    width: 2.4rem;
-    height: 2.4rem;
-    display: inline-block;
+  .menuOn {
+    width: 2.5rem;
+    height: 2.5rem;
 
-    svg {
-      font-size: 2.4rem;
-      transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+    .menuIcon {
+      transition: transform 0.3s ease, color 0.3s ease;
+      position: relative;
+      right: 0.2rem;
 
       &:hover {
-        transform: rotate(180deg);
-        font-size: 2.7rem;
         color: ${({ theme }) => theme.COLORS.BLUE};
       }
     }
@@ -43,7 +40,7 @@ export const Container = styled.header`
   @media (min-width: 1024px) {
     justify-content: center;
 
-    .menu {
+    .menuOn {
       display: none;
     }
 
@@ -57,7 +54,7 @@ export const Container = styled.header`
     }
 
     .deskOrder {
-      background-color: ${({ theme }) => theme.COLORS.RED};
+      background: ${({ theme }) => theme.COLORS.RED};
       width: 21.4rem;
       height: 4.8rem;
       font-size: 1.4rem;

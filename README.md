@@ -30,6 +30,12 @@ Para executar o projeto em ambiente de desenvolvimento
 
 Acesse a porta `http://localhost:3333`
 
+Obs: Caso necessário navegue pelas pastas src/services/api.js
+e escolha entre 
+baseURL: "https://rocketfoods-api.onrender.com" ou
+baseURL: "http://localhost:3333", conforme seu interesse. Para que isso seja feito basta "invalidar a opçao não desejada com commit "//" no início dela.
+Lembrando: Caso opte por localhost, será necessário rodar a API em seu pc. Ao optar pela URL do render acessará a minha API que foi feito deploy pelo onrender.
+
 `Deploy do projeto back-end pelo render: https://rocketfoods-api.onrender.com`
 <br>
 
